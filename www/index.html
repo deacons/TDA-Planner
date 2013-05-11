@@ -15,10 +15,23 @@
 
 	<div data-role="header">
 		<h1>TDA Planner</h1>
+		<a href="#popupwelcome" id="welcomeinfobutton" class="ui-icon-alt" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext" data-theme="a" data-transition="pop">Info</a>
 	</div><!-- /header -->
+	
+	<div data-role="popup" id="popupwelcome" data-theme="a">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+		<div style="padding:10px 20px;">
+			<h3>Welcome</h3>
+			<p>welcometext</p>
+		</div>
+	</div>
 
 	<div data-role="content">
-		<p></p>
+		<ul data-role="listview" data-inset="true" data-divider-theme="b">
+			<li data-role="list-divider" data-theme="b">Services</li>
+			<li><a href="#vle" data-transition="flow" class="timetable" id="vlebutton">VLE<span class="ui-li-count"><span style="color:#00C913;">server online</span></a></li>
+			<li><a href="#eportal" data-transition="flow" class="timetable" id="eportalbutton">ePORTAL<span class="ui-li-count"><span style="color:#C95100;">server offline</span></a></li>
+
 	</div><!-- /content -->
 
 	<div data-role="footer">
