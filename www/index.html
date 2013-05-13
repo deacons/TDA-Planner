@@ -17,16 +17,23 @@
 
 	<div data-role="header">
 		<h1>TDA Planner</h1>
-		<a href="#popupwelcome" id="welcomeinfobutton" class="ui-icon-alt" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext" data-theme="a" data-transition="pop">Info</a>
+		<a href="#welcomepopup" id="welcomeinfobutton" class="ui-icon-alt" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext" data-theme="a" data-transition="pop">Info</a>
 	</div><!-- /header -->
 	
-	<div data-role="popup" id="popupwelcome" data-theme="a">
+	<div data-role="popup" id="welcomepopup" data-theme="a">
 		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 		<div style="padding:10px 20px;">
 			<h3>Welcome</h3>
 			<p>welcometext</p>
 		</div>
-	</div>
+	</div><!-- /popup -->
+
+<!--
+	<div data-role="panel" id="welcomeside" data-position="right" data-display="push" data-theme="b">
+		<h3>Welcome</h3>
+		<p>Hi</p>
+    </div>
+-->
 
 	<div data-role="content">
 		<ul data-role="listview" data-inset="true" data-divider-theme="b">
