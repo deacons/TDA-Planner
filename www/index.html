@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<meta charset="utf-8">
 	<title>TDA Planner</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="jquery.mobile-1.3.1/jquery.tdacolleges.min.css" />
@@ -9,31 +11,37 @@
 	<script src="jquery.mobile-1.3.1/jquery.mobile-1.3.1.min.js"></script>
 	<script src="cordova-2.7.0.js"></script>
 </head>
+
 <body>
 
 <div data-role="page" id="welcome">
 
 	<div data-role="header">
 		<h1>TDA Planner</h1>
-		<a href="#popupwelcome" id="welcomeinfobutton" class="ui-icon-alt" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext" data-theme="a" data-transition="pop">Info</a>
+		<a href="#welcomepopup" id="welcomeinfobutton" class="ui-icon-alt" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-icon="info" data-iconpos="notext" data-theme="a" data-transition="pop">Info</a>
 	</div><!-- /header -->
 	
-	<div data-role="popup" id="popupwelcome" data-theme="a">
+	<div data-role="popup" id="welcomepopup" data-theme="a">
 		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
 		<div style="padding:10px 20px;">
 			<h3>Welcome</h3>
 			<p>welcometext</p>
 		</div>
-	</div>
+	</div><!-- /popup -->
+
+<!--
+	<div data-role="panel" id="welcomeside" data-position="right" data-display="push" data-theme="b">
+		<h3>Welcome</h3>
+		<p>Hi</p>
+    </div>
+-->
 
 	<div data-role="content">
 		<ul data-role="listview" data-inset="true" data-divider-theme="b">
 			<li data-role="list-divider" data-theme="b">Services</li>
-			<li><a href="vle.html" data-transition="flow" class="timetable" id="vlebutton">VLE<span class="ui-li-count"><span style="color:#00C913;">server online</span></a></li>
-			<li><a href="#eportal" data-transition="flow" class="timetable" id="eportalbutton">ePORTAL<span class="ui-li-count"><span style="color:#C95100;">server offline</span></a></li>
+			<li><a href="vle.html" data-transition="flow" class="timetable" id="vlebutton">VLE<span class="ui-li-count" style="color:#00C913;">server online</span></a></li>
+			<li><a href="#eportal" data-transition="flow" class="timetable" id="eportalbutton">ePORTAL<span class="ui-li-count" style="color:#C95100;">server offline</span></a></li>
 		</ul>
-	</div>
-
 	</div><!-- /content -->
 
 	<div data-role="footer">
@@ -42,4 +50,5 @@
 </div><!-- /page -->
 
 </body>
+
 </html>
