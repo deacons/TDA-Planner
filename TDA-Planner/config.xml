@@ -60,5 +60,5 @@
         <plugin name="InAppBrowser" value="CDVInAppBrowser" />
     </plugins>
 
-    <access origin="google.com" />
+    <access origin="*.thomasdeaconacademy.peterborough.sch.uk" />
 </widget>

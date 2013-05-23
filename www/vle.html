@@ -29,16 +29,6 @@
 			}
 		}
 	</script>
-</head>
-
-<body>
-
-<div data-role="page" id="welcome" data-add-back-btn="true" onload="return window_onload();">
-
-	<div data-role="header">
-		<h1>TDA VLE</h1>
-	</div><!-- /header -->
-
 	<script type="text/javascript">
 		window.onload = function() {
 			var a = document.getElementById("testbutton");
@@ -55,11 +45,20 @@
 			}
 		}
 	</script>
+</head>
+
+<body>
+
+<div data-role="page" id="welcome" data-add-back-btn="true" onload="return window_onload();">
+
+	<div data-role="header">
+		<h1>TDA VLE</h1>
+	</div><!-- /header -->
 
 	<div data-role="content">
 		<ul data-role="listview" data-inset="true" data-divider-theme="b">
 			<li data-role="list-divider" data-theme="b">Services</li>
-			<li id="testbutton"><a href="javascript:void(0);" data-transition="flow" class="timetable">VLE<span class="ui-li-count" style="color:#00C913;">server online</span></a></li>
+			<li><a href="javascript:void(0);" data-transition="flow" class="timetable" id="testbutton">VLE<span class="ui-li-count" style="color:#00C913;">server online</span></a></li>
 		</ul>
 		<form action="https://gateway.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off">
 			<input type="hidden" id="curl" name="curl" value="Z2F" />
