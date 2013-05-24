@@ -29,22 +29,6 @@
 			}
 		}
 	</script>
-	<script type="text/javascript">
-		window.onload = function() {
-			var a = document.getElementById("testbutton");
-			a.onclick = function() {
-				var ref = window.open('http://georgegarside.x10.bz/testpg.html', '_blank', 'location=no');
-				ref.addEventListener('loadstart', function(event) {
-				    var urlSuccessPage = "http://georgegarside.x10.bz/testpgsuccess.html";
-				    if (event.url == urlSuccessPage) {
-				    	ref.close();
-				    	window.location.href="index.html"
-				    }
-				});
-				return false;
-			}
-		}
-	</script>
 </head>
 
 <body>
@@ -56,12 +40,8 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<ul data-role="listview" data-inset="true" data-divider-theme="b">
-			<li data-role="list-divider" data-theme="b">Services</li>
-			<li><a href="javascript:void(0);" data-transition="flow" class="timetable" id="testbutton">VLE<span class="ui-li-count" style="color:#00C913;">server online</span></a></li>
-		</ul>
 		<form action="https://gateway.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off">
-			<input type="hidden" id="curl" name="curl" value="Z2F" />
+			<input type="hidden" id="curl" name="curl" value="Z2Ftdaplanner.html" />
 			<input type="hidden" id="flags" name="flags" value="0" />
 			<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
 			<input type="hidden" id="formdir" name="formdir" value="3" />
@@ -77,7 +57,7 @@
     	    					<tr>
     	    						<td class="nowrap"><label for="username">Username:&nbsp;&nbsp;</label></td>
     	    						<td class="txtpad">
-    	    							<input class="txt" id="username" name="username" type="text" />
+    	    							<input class="txt" autocorrect="off" autocapitalize="off" id="username" name="username" type="text" />
     	    						</td>
     	    					</tr>
     	    					<tr>
