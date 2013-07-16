@@ -18,7 +18,7 @@
  under the License.
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "com.georgegarside.TDA-Planner"
+        id        = "com.georgegarside.tdaplanner"
         version   = "1.0.0">
     <name>TDA Planner</name>
 
