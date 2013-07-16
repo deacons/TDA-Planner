@@ -20,8 +20,8 @@
 //  main.m
 //  TDA-Planner
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//  Created by George Garside on 29/5/2013.
+//  Copyright George Garside 2013. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
