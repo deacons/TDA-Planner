@@ -46,44 +46,20 @@
 			<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
 			<input type="hidden" id="formdir" name="formdir" value="3" />
 			<div style="display: none;"><input id="rdoPrvt" type="radio" name="trusted" value="4" class="rdo" onclick="clkSec()" checked="checked" /></div>
-			<table style="margin-left: auto;margin-right: auto;" id="tblMain">
-    			<tr>
-    	    		<td>
-    	    			<table>
-    	    				<colgroup>
-    	    				<col class="nowrap">
-    	    				<col class="w100">
-    	    				<tbody>
-    	    					<tr>
-    	    						<td class="nowrap"><label for="username">Username:&nbsp;&nbsp;</label></td>
-    	    						<td class="txtpad">
-    	    							<input class="txt" autocorrect="off" autocapitalize="off" id="username" name="username" type="text" />
-    	    						</td>
-    	    					</tr>
-    	    					<tr>
-    	    						<td class="nowrap"><label for="password">Password:&nbsp;&nbsp;</label></td>
-    	    						<td class="txtpad">
-    	    							<input class="txt" id="password" onfocus="g_fFcs=0" type="password" name="password" />
-    	    						</td>
-    	    					</tr>
-    	    					<tr>
-    	    						<td class="nowrap">&nbsp;</td>
-    	    						<td class="txtpad" colspan="1">
-    	    							<input class="btn" type="submit" value="Log On" name="SubmitCreds" /> 
-    	    						</td>
-    	    					</tr>
-    	    				</tbody>
-    	    			</table>
-    				</td>
-    	    	</tr>
-    		</table>
-    		<table id="tblMid2" class="mid" style="display:none">
-    			<tr>
-    				<td class="txtpad">
-    					<input type="button" class="btn" style="float: right" value="Retry" onclick="clkRtry()">
-    				</td>
-    			</tr>
-    		</table>
+			<ul style="margin-left: auto;margin-right: auto;" data-role="listview" data-inset="true">
+				<li data-role="fieldcontain">
+					<label for="username">Username:&nbsp;&nbsp;</label>
+					<input class="txt" autocorrect="off" autocapitalize="off" id="username" name="username" type="text" />
+				</li>
+				<li data-role="fieldcontain">
+					<label for="password">Password:&nbsp;&nbsp;</label>
+					<input class="txt" id="password" onfocus="g_fFcs=0" type="password" name="password" />
+				</li>
+				<li data-role="fieldcontain">
+    	    		<label>&nbsp;</label>
+    	    		<input class="btn" type="submit" value="Log On" name="SubmitCreds" />
+				</li>
+			</ul>
 		</form>
 	</div><!-- /content -->
 
