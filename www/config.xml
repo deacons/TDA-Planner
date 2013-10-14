@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.georgegarside.tdaplanner" version="1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>TDA-Planner</name>
+    <description>
+        Thomas Deacon Academy Planner App
+    </description>
+    <author email="grg.garside@gmail.com" href="http://georgegarside.x10.bz">
+		George Garside
+    </author>
+    <access origin="*.thomasdeaconacademy.peterborough.sch.uk" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <content src="index.html" />
+</widget>
