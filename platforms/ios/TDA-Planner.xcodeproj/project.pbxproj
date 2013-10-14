@@ -15,7 +15,7 @@
 		1739A3E5180C5859004BA0E9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3DD180C5859004BA0E9 /* icon.png */; };
 		1739A3E6180C5859004BA0E9 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3DE180C5859004BA0E9 /* icon@2x.png */; };
 		1739A3E7180C5859004BA0E9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3DF180C5859004BA0E9 /* iTunesArtwork.png */; };
-		1739A3ED180C5874004BA0E9 /* Default-568h@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EA180C5874004BA0E9 /* Default-568h@2x~iPhone.png */; };
+		1739A3ED180C5874004BA0E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */; };
 		1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */; };
 		1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EC180C5874004BA0E9 /* Default~iPhone.png */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -71,9 +71,9 @@
 		1739A3DD180C5859004BA0E9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = "TDA-Planner/Resources/icons/icon.png"; sourceTree = "<group>"; };
 		1739A3DE180C5859004BA0E9 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "TDA-Planner/Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
 		1739A3DF180C5859004BA0E9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = "TDA-Planner/Resources/icons/iTunesArtwork.png"; sourceTree = "<group>"; };
-		1739A3EA180C5874004BA0E9 /* Default-568h@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iPhone.png"; sourceTree = "<group>"; };
-		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iPhone.png"; sourceTree = "<group>"; };
-		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iPhone.png"; sourceTree = "<group>"; };
+		1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TDA-Planner/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
+		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iPhone.png"; path = "TDA-Planner/Resources/splash/Default@2x~iPhone.png"; sourceTree = "<group>"; };
+		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPhone.png"; path = "TDA-Planner/Resources/splash/Default~iPhone.png"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -171,9 +171,6 @@
 		1739A3E9180C5874004BA0E9 /* splash */ = {
 			isa = PBXGroup;
 			children = (
-				1739A3EA180C5874004BA0E9 /* Default-568h@2x~iPhone.png */,
-				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
-				1739A3EC180C5874004BA0E9 /* Default~iPhone.png */,
 			);
 			name = splash;
 			path = "TDA-Planner/Resources/splash";
@@ -206,6 +203,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */,
+				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
+				1739A3EC180C5874004BA0E9 /* Default~iPhone.png */,
 				1739A3E9180C5874004BA0E9 /* splash */,
 				1739A3E8180C5862004BA0E9 /* icons */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
@@ -381,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1739A3E4180C5859004BA0E9 /* icon-120.png in Resources */,
-				1739A3ED180C5874004BA0E9 /* Default-568h@2x~iPhone.png in Resources */,
+				1739A3ED180C5874004BA0E9 /* Default-568h@2x.png in Resources */,
 				1739A3E1180C5859004BA0E9 /* icon-72.png in Resources */,
 				1739A3E5180C5859004BA0E9 /* icon.png in Resources */,
 				F840E1F1165FE0F500CFE078 /* config.xml in Resources */,
