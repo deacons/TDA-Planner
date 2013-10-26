@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>TDA Planner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.tdacolleges.min.css" />
+	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile" charset="utf-8">
+	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile.theme-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile Theme" charset="utf-8">
+	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile.structure-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile Structure" charset="utf-8">
+	<style>
+		/* Enable multi-line buttons */
+		.ui-btn-inner {white-space: normal !important;}
+	</style>
+	<script src="js/jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+	<script src="cordova.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="loggedin">
+
+	<div data-role="header" data-position="fixed" data-add-back-btn="true" style="padding-top:20px">
+		<h1>TDA Planner</h1>
+	</div><!-- /header -->
+	
+	<div data-role="content">
+		
+		<div id="homeworksWrapper">
+			
+			<table data-role="table" id="homeworksTable" data-mode="reflow" class="ui-responsive table-stroke" style="display: none;">
+				<thead id="homeworksHeader">
+					<tr>
+						<th>Subject:</th>
+						<th>Set:</th>
+						<th>Due:</th>
+						<th>Description:</th>
+						<th>Mark?:</th>
+					</tr>
+				</thead>
+				<tbody id="homeworksContent">
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+				
+		<script>
+			$('#homeworksContent').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #ctl00_PlaceHolderMain_GridViewHWDiary > tbody > tr:not(tr:first)', function() {
+				
+				$('#homeworksContent > tr:nth-child(n+1) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
+				$('#homeworksContent > tr:nth-child(n+1) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
+				$('#homeworksContent > tr:nth-child(n+1) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
+				$('#homeworksContent > tr:nth-child(n+1) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
+				$('#homeworksContent > tr:nth-child(n+1) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
+                $('#homeworksContent > tr:nth-child(n+1) > td:nth-child(4) > a:first-of-type').contents().unwrap();
+				
+			});
+            $('#homeworksTable').removeAttr("style");
+		</script>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+
+</html>
