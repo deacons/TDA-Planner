@@ -20,167 +20,39 @@
 
 <body>
 
-<div data-role="page" id="loggedin">
+<div data-role="page" id="menusplash">
 
-	<div data-role="header" data-position="fixed">
+	<div data-role="header" data-position="fixed" style="padding-top:20px">
 		<h1>TDA Planner</h1>
 	</div><!-- /header -->
 	
 	<div data-role="content">
 		
-		<div id="homeworksWrapper">
-			
-			<table data-role="table" id="homeworksTable" data-mode="reflow" class="ui-responsive table-stroke">
-				<thead id="homeworksHeader">
-					<tr>
-						<th>Subject:</th>
-						<th>Set:</th>
-						<th>Due:</th>
-						<th>Description:</th>
-						<th>Mark?:</th>
-					</tr>
-				</thead>
-				<tbody id="homeworksContent">
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			
+		<div id="user">
+            <div class="ui-grid-a">
+                <div class="ui-block-a" id="profilepicture"></div>
+                <div class="ui-block-b" id="loggedinusername"><br />Welcome <span id="firstname"></span> <span id="lastname"></span> to the new TDA Planner app!</div>
+            </div><!-- /grid-a -->
 		</div>
-				
+        
+		<div id="easytrace" class="ui-bar"></div>
+		
+		<br />
+		
+		<div id="menu">
+			<div data-role="menugroup">
+			    <a href="homeworks.html" data-role="button" data-icon="arrow-r" data-iconpos="right" data-transition="flow">Homework</a>
+			</div>
 		<script>
-			$('#homeworksContent').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #ctl00_PlaceHolderMain_GridViewHWDiary > tbody > tr:not(tr:first)', function() {
-				
-				$('#homeworksContent > tr:nth-child(1) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(1) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(1) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(1) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(1) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(2) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(2) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(2) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(2) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(2) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(3) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(3) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(3) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(3) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(3) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(4) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(4) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(4) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(4) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(4) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(5) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(5) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(5) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(5) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(5) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(6) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(6) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(6) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(6) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(6) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(7) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(7) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(7) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(7) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(7) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(8) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(8) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(8) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(8) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(8) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(9) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(9) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(9) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(9) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(9) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				$('#homeworksContent > tr:nth-child(10) > td:nth-child(1)').prepend('<b>Subject:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(10) > td:nth-child(2)').prepend('<b>Set:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(10) > td:nth-child(3)').prepend('<b>Due:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(10) > td:nth-child(4)').prepend('<b>Description:&nbsp;</b>');
-				$('#homeworksContent > tr:nth-child(10) > td:nth-child(5)').prepend('<b>Mark?:&nbsp;</b>');
-				
-				
+			
+			$('#profilepicture').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #ctl00_PlaceHolderLeftNavBarTop_profilePic', function() {
+				$('#profilepicture > img').attr('style', 'width:70%;padding:10px;');
 			});
+			
+			$('#firstname').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #ctl00_PlaceHolderMain_forenamelbl');
+			$('#lastname').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #ctl00_PlaceHolderMain_surnamelbl');
+			$('#easytrace').load('https://gateway.thomasdeaconacademy.peterborough.sch.uk/TDA/Students/_layouts/apppages/student-landing-page.aspx #AccountInfoDialog');
+			
 		</script>
 		
 	</div><!-- /content -->
