@@ -417,8 +417,8 @@
 
 			.button:hover
 			{
-				color: #f35858;
-				border-color: rgba(243,88,88,0.5);
+				color: #0085BE;
+				border-color: rgba(0,133,190,0.5);
 			}
 			
 			.button:active
