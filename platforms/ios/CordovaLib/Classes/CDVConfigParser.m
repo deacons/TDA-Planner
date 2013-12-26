@@ -40,6 +40,9 @@
         self.pluginsDict = [[NSMutableDictionary alloc] initWithCapacity:30];
         self.settings = [[NSMutableDictionary alloc] initWithCapacity:30];
         self.whitelistHosts = [[NSMutableArray alloc] initWithCapacity:30];
+        [self.whitelistHosts addObject:@"file:///*"];
+        [self.whitelistHosts addObject:@"content:///*"];
+        [self.whitelistHosts addObject:@"data:///*"];
         self.startupPluginNames = [[NSMutableArray alloc] initWithCapacity:8];
         featureName = nil;
     }
@@ -79,7 +82,7 @@
 
 - (void)parser:(NSXMLParser*)parser parseErrorOccurred:(NSError*)parseError
 {
-    NSAssert(NO, @"config.xml parse error line %ld col %ld", (long)[parser lineNumber], (long)[parser columnNumber]);
+    NSAssert(NO, @"config.xml parse error line %d col %d", [parser lineNumber], [parser columnNumber]);
 }
 
 @end
