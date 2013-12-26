@@ -73,6 +73,7 @@
 		1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TDA-Planner/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
 		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iPhone.png"; path = "TDA-Planner/Resources/splash/Default@2x~iPhone.png"; sourceTree = "<group>"; };
 		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPhone.png"; path = "TDA-Planner/Resources/splash/Default~iPhone.png"; sourceTree = "<group>"; };
+		17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "TDA-Planner.entitlements"; path = "TDA-Planner/TDA-Planner.entitlements"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */,
 				1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */,
 				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
 				1739A3EC180C5874004BA0E9 /* Default~iPhone.png */,
@@ -331,6 +333,11 @@
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = T8ZLVM838L;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -476,6 +483,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "TDA-Planner/TDA-Planner.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -512,6 +520,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "TDA-Planner/TDA-Planner.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
