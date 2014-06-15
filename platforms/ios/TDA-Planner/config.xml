@@ -11,6 +11,9 @@
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="OpenAllWhitelistURLsInWebView" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
+    <feature name="iAd">
+        <param name="ios-package" value="CDViAd" />
+    </feature>
     <name>TDA-Planner</name>
     <description>
         Thomas Deacon Academy Planner App
@@ -23,7 +26,4 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <content src="index.html" />
-    <feature name="iAd">
-        <param name="ios-package" value="CDViAd" />
-    </feature>
 </widget>

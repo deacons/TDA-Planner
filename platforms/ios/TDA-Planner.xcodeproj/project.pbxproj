@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		09607C0167854D03B359D66D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C3E663D10E42C2AA763428 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1739A3E0180C5859004BA0E9 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3D8180C5859004BA0E9 /* icon-58.png */; };
