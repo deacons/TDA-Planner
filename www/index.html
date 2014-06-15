@@ -17,32 +17,24 @@
 	<script src="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.js"></script>
 	<script src="cordova.js"></script>
 	<script src="js/jstorage.min.js" type="text/javascript" charset="utf-8"></script>
+    // iAd
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
-
         document.addEventListener("onClickAd", onClickAd, false);
         document.addEventListener("onReceiveAd", onReceiveAd, false);
         document.addEventListener("onFailedToReceiveAd", onFailedToReceiveAd, false);
 
         function onDeviceReady() {
-            if ( window.plugins && window.plugins.iAd ) {
-                window.plugins.iAd.createBannerView(
-                        {
-                            'bannerAtTop': true
-                        }, function() {
-                            window.plugins.iAd.showAd( true );
-                        }, function(){
-                            alert( "failed to create ad view" );
-                        });
-            } else {
-                alert('iAd plugin not available/ready.');
-            }
+            if ( window.plugins && window.plugins.iAd ) { window.plugins.iAd.createBannerView( { 'bannerAtTop': false },
+                    function() { window.plugins.iAd.showAd( true ); },
+                    function() { alert( "iAd unavailable" ); });
+            } else { alert('iAd framework unavailable'); }
         }
         function onClickAd() {
-            // count click
+            // TODO: Count click
         }
         function onReceiveAd() {
-            // do whatever you want
+            // Probably never going to do anything with this
         }
         function onFailedToReceiveAd( ret ) {
             alert( ret.error );
