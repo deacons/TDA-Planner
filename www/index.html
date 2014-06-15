@@ -27,8 +27,8 @@
         function onDeviceReady() {
             if ( window.plugins && window.plugins.iAd ) { window.plugins.iAd.createBannerView( { 'bannerAtTop': false },
                     function() { window.plugins.iAd.showAd( true ); },
-                    function() { alert( "iAd unavailable" ); });
-            } else { alert('iAd framework unavailable'); }
+                    // function() { alert( "iAd unavailable" ); });
+            } else { /* alert('iAd framework unavailable'); */ }
         }
         function onClickAd() {
             // TODO: Count click
@@ -37,7 +37,7 @@
             // Probably never going to do anything with this
         }
         function onFailedToReceiveAd( ret ) {
-            alert( ret.error );
+            // alert( ret.error );
         }
     </script>
 </head>
