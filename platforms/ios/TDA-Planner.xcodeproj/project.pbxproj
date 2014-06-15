@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1739A3E0180C5859004BA0E9 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3D8180C5859004BA0E9 /* icon-58.png */; };
 		1739A3E1180C5859004BA0E9 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3D9180C5859004BA0E9 /* icon-72.png */; };
@@ -42,6 +41,9 @@
 		5AA0E66F1729F460000DC89A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA0E66E1729F460000DC89A /* ImageIO.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		932D15775E694CE088ECE176 /* CDViAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E817B805AC44525AD71F580 /* CDViAd.m */; };
+		80AE4FAC0CD6442EA412EFC7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE081411D12241128C8497EB /* AdSupport.framework */; };
+		09607C0167854D03B359D66D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C3E663D10E42C2AA763428 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,10 @@
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* TDA-Planner-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "TDA-Planner-Info.plist"; path = "../TDA-Planner-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "TDA-Planner/config.xml"; sourceTree = "<group>"; };
+		9E817B805AC44525AD71F580 /* CDViAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDViAd.m"; path = "com.rjfun.cordova.plugin.iad/CDViAd.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6ECFC7CD0CBB442F82051592 /* CDViAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDViAd.h"; path = "com.rjfun.cordova.plugin.iad/CDViAd.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		EE081411D12241128C8497EB /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		11C3E663D10E42C2AA763428 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "iAd.framework"; path = "System/Library/Frameworks/iAd.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,8 @@
 				301BF5C5109A6A2B0062928A /* SystemConfiguration.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */,
+				80AE4FAC0CD6442EA412EFC7 /* AdSupport.framework in Frameworks */,
+				09607C0167854D03B359D66D /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +273,8 @@
 				301BF5C4109A6A2B0062928A /* SystemConfiguration.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				30E5649113A7FCAF007403D8 /* CoreMedia.framework */,
+				EE081411D12241128C8497EB /* AdSupport.framework */,
+				11C3E663D10E42C2AA763428 /* iAd.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				9E817B805AC44525AD71F580 /* CDViAd.m */,
+				6ECFC7CD0CBB442F82051592 /* CDViAd.h */,
 			);
 			name = Plugins;
 			path = "TDA-Planner/Plugins";
@@ -329,7 +341,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5TFUK958NL;
@@ -429,6 +441,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				932D15775E694CE088ECE176 /* CDViAd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

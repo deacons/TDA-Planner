@@ -23,4 +23,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <content src="index.html" />
+    <feature name="iAd">
+        <param name="ios-package" value="CDViAd" />
+    </feature>
 </widget>
