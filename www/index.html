@@ -27,16 +27,10 @@
         function onDeviceReady() {
             if ( window.plugins && window.plugins.iAd ) {
                 window.plugins.iAd.createBannerView(
-                        {
-                            'bannerAtTop': false
-                        }, function() {
-                            window.plugins.iAd.showAd( true );
-                        }, function(){
-                            alert( "failed to create ad view" );
-                        });
-            } else {
-                alert('iAd plugin not available/ready.');
-            }
+                        { 'bannerAtTop': false },
+                        function() { window.plugins.iAd.showAd( true ); },
+                        function() { alert( "failed to create ad view" ); });
+            } else { alert('iAd plugin not available/ready.'); }
         }
         function onClickAd() {
             // TODO: Count click
