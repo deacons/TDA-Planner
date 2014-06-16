@@ -32,10 +32,10 @@
     <description>
         Thomas Deacon Academy Planner App
     </description>
-    <author email="grg.garside@gmail.com" href="http://georgegarside.x10.bz">
+    <author email="grg.garside@gmail.com" href="http://georgegarside.com">
 		George Garside
     </author>
-    <access origin="*.thomasdeaconacademy.peterborough.sch.uk" />
+    <access origin="*" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
