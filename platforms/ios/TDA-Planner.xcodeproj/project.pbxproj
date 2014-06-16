@@ -44,6 +44,7 @@
 		80AE4FAC0CD6442EA412EFC7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE081411D12241128C8497EB /* AdSupport.framework */; };
 		932D15775E694CE088ECE176 /* CDViAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E817B805AC44525AD71F580 /* CDViAd.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		9E817B805AC44525AD71F580 /* CDViAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDViAd.m; path = com.rjfun.cordova.plugin.iad/CDViAd.m; sourceTree = "<group>"; };
 		EE081411D12241128C8497EB /* AdSupport.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "TDA-Planner/config.xml"; sourceTree = "<group>"; };
+		911789424D564B9B8B774877 /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BC98A2FCD8E249FBA7840875 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +295,8 @@
 			children = (
 				9E817B805AC44525AD71F580 /* CDViAd.m */,
 				6ECFC7CD0CBB442F82051592 /* CDViAd.h */,
+				911789424D564B9B8B774877 /* CDVStatusBar.m */,
+				BC98A2FCD8E249FBA7840875 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "TDA-Planner/Plugins";
@@ -442,6 +447,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				932D15775E694CE088ECE176 /* CDViAd.m in Sources */,
+				151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

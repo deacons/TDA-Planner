@@ -22,6 +22,12 @@
     <feature name="iAd">
         <param name="ios-package" value="CDViAd" />
     </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <name>TDA-Planner</name>
     <description>
         Thomas Deacon Academy Planner App
@@ -33,5 +39,8 @@
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#f1f1f1" />
+    <preference name="StatusBarStyle" value="default" />
     <content src="index.html" />
 </widget>
