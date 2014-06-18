@@ -11,7 +11,6 @@
 		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
 		1739A3ED180C5874004BA0E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */; };
 		1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */; };
-		1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EC180C5874004BA0E9 /* Default~iPhone.png */; };
 		175334EE194F6CEE007F5A72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334ED194F6CEE007F5A72 /* Parse.framework */; };
 		175334F0194F6D19007F5A72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334EF194F6D19007F5A72 /* libz.dylib */; };
 		175334F2194F6D31007F5A72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F1194F6D31007F5A72 /* Security.framework */; };
@@ -69,7 +68,6 @@
 		11C3E663D10E42C2AA763428 /* iAd.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TDA-Planner/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
 		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iPhone.png"; path = "TDA-Planner/Resources/splash/Default@2x~iPhone.png"; sourceTree = "<group>"; };
-		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPhone.png"; path = "TDA-Planner/Resources/splash/Default~iPhone.png"; sourceTree = "<group>"; };
 		175334ED194F6CEE007F5A72 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		175334EF194F6D19007F5A72 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		175334F1194F6D31007F5A72 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -171,21 +169,6 @@
 			path = "TDA-Planner/Classes";
 			sourceTree = SOURCE_ROOT;
 		};
-		1739A3E8180C5862004BA0E9 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = icons;
-			sourceTree = "<group>";
-		};
-		1739A3E9180C5874004BA0E9 /* splash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = splash;
-			path = "TDA-Planner/Resources/splash";
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,9 +201,6 @@
 				17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */,
 				1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */,
 				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
-				1739A3EC180C5874004BA0E9 /* Default~iPhone.png */,
-				1739A3E9180C5874004BA0E9 /* splash */,
-				1739A3E8180C5862004BA0E9 /* icons */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
@@ -418,7 +398,6 @@
 				17AF7BCD1951E08D00397A36 /* Images.xcassets in Resources */,
 				1F766FE113BBADB100FB74C0 /* Localizable.strings in Resources */,
 				1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */,
-				1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */,
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
