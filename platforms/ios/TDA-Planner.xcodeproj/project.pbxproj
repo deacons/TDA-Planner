@@ -7,6 +7,7 @@
 	objects = {
 /* Begin PBXBuildFile section */
 		09607C0167854D03B359D66D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C3E663D10E42C2AA763428 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
 		1739A3E0180C5859004BA0E9 /* icon-58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3D8180C5859004BA0E9 /* icon-58.png */; };
 		1739A3E1180C5859004BA0E9 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3D9180C5859004BA0E9 /* icon-72.png */; };
 		1739A3E2180C5859004BA0E9 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3DA180C5859004BA0E9 /* icon-72@2x.png */; };
@@ -18,6 +19,13 @@
 		1739A3ED180C5874004BA0E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */; };
 		1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */; };
 		1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EC180C5874004BA0E9 /* Default~iPhone.png */; };
+		175334EE194F6CEE007F5A72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334ED194F6CEE007F5A72 /* Parse.framework */; };
+		175334F0194F6D19007F5A72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334EF194F6D19007F5A72 /* libz.dylib */; };
+		175334F2194F6D31007F5A72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F1194F6D31007F5A72 /* Security.framework */; };
+		175334F4194F6D38007F5A72 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F3194F6D38007F5A72 /* StoreKit.framework */; };
+		175334F6194F6D3F007F5A72 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F5194F6D3F007F5A72 /* Accounts.framework */; };
+		175334F8194F6D45007F5A72 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F7194F6D45007F5A72 /* Social.framework */; };
+		175334FA194F6D67007F5A72 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F9194F6D67007F5A72 /* FacebookSDK.framework */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -44,7 +52,6 @@
 		80AE4FAC0CD6442EA412EFC7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE081411D12241128C8497EB /* AdSupport.framework */; };
 		932D15775E694CE088ECE176 /* CDViAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E817B805AC44525AD71F580 /* CDViAd.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
-		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,13 @@
 		1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TDA-Planner/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
 		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iPhone.png"; path = "TDA-Planner/Resources/splash/Default@2x~iPhone.png"; sourceTree = "<group>"; };
 		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPhone.png"; path = "TDA-Planner/Resources/splash/Default~iPhone.png"; sourceTree = "<group>"; };
+		175334ED194F6CEE007F5A72 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		175334EF194F6D19007F5A72 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		175334F1194F6D31007F5A72 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		175334F3194F6D38007F5A72 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		175334F5194F6D3F007F5A72 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		175334F7194F6D45007F5A72 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		175334F9194F6D67007F5A72 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "TDA-Planner.entitlements"; path = "TDA-Planner/TDA-Planner.entitlements"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,11 +126,11 @@
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		6ECFC7CD0CBB442F82051592 /* CDViAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDViAd.h; path = com.rjfun.cordova.plugin.iad/CDViAd.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TDA-Planner-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "TDA-Planner-Info.plist"; path = "../TDA-Planner-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		911789424D564B9B8B774877 /* CDVStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVStatusBar.m; path = org.apache.cordova.statusbar/CDVStatusBar.m; sourceTree = "<group>"; };
 		9E817B805AC44525AD71F580 /* CDViAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDViAd.m; path = com.rjfun.cordova.plugin.iad/CDViAd.m; sourceTree = "<group>"; };
+		BC98A2FCD8E249FBA7840875 /* CDVStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = org.apache.cordova.statusbar/CDVStatusBar.h; sourceTree = "<group>"; };
 		EE081411D12241128C8497EB /* AdSupport.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "TDA-Planner/config.xml"; sourceTree = "<group>"; };
-		911789424D564B9B8B774877 /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		BC98A2FCD8E249FBA7840875 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +138,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175334F8194F6D45007F5A72 /* Social.framework in Frameworks */,
+				175334F6194F6D3F007F5A72 /* Accounts.framework in Frameworks */,
+				175334F4194F6D38007F5A72 /* StoreKit.framework in Frameworks */,
+				175334F2194F6D31007F5A72 /* Security.framework in Frameworks */,
+				301BF5C3109A6A2B0062928A /* QuartzCore.framework in Frameworks */,
+				175334F0194F6D19007F5A72 /* libz.dylib in Frameworks */,
 				301BF5BF109A6A2B0062928A /* CoreLocation.framework in Frameworks */,
+				175334EE194F6CEE007F5A72 /* Parse.framework in Frameworks */,
 				5AA0E66F1729F460000DC89A /* ImageIO.framework in Frameworks */,
 				5AA0E66D1729F45B000DC89A /* OpenAL.framework in Frameworks */,
 				5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */,
@@ -138,9 +159,9 @@
 				301BF5BB109A6A2B0062928A /* AVFoundation.framework in Frameworks */,
 				301BF5BD109A6A2B0062928A /* CFNetwork.framework in Frameworks */,
 				301BF5C1109A6A2B0062928A /* MediaPlayer.framework in Frameworks */,
-				301BF5C3109A6A2B0062928A /* QuartzCore.framework in Frameworks */,
 				301BF5C5109A6A2B0062928A /* SystemConfiguration.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				175334FA194F6D67007F5A72 /* FacebookSDK.framework in Frameworks */,
 				30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */,
 				80AE4FAC0CD6442EA412EFC7 /* AdSupport.framework in Frameworks */,
 				09607C0167854D03B359D66D /* iAd.framework in Frameworks */,
@@ -213,6 +234,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				175334F9194F6D67007F5A72 /* FacebookSDK.framework */,
+				175334ED194F6CEE007F5A72 /* Parse.framework */,
 				17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */,
 				1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */,
 				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
@@ -258,6 +281,11 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				175334F7194F6D45007F5A72 /* Social.framework */,
+				175334F5194F6D3F007F5A72 /* Accounts.framework */,
+				175334F3194F6D38007F5A72 /* StoreKit.framework */,
+				175334F1194F6D31007F5A72 /* Security.framework */,
+				175334EF194F6D19007F5A72 /* libz.dylib */,
 				5AEE5B34173C68D80009041E /* CoreLocation.framework */,
 				5AA0E66E1729F460000DC89A /* ImageIO.framework */,
 				5AA0E66C1729F45B000DC89A /* OpenAL.framework */,
@@ -506,6 +534,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -543,6 +575,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TDA-Planner/TDA-Planner-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
