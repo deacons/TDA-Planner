@@ -19,6 +19,7 @@
 		175334F8194F6D45007F5A72 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F7194F6D45007F5A72 /* Social.framework */; };
 		175334FA194F6D67007F5A72 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F9194F6D67007F5A72 /* FacebookSDK.framework */; };
 		17AF7BCD1951E08D00397A36 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF7BCC1951E08D00397A36 /* Images.xcassets */; };
+		17AF7BD11951ED9600397A36 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AF7BD01951ED9600397A36 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -76,6 +77,7 @@
 		175334F7194F6D45007F5A72 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		175334F9194F6D67007F5A72 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		17AF7BCC1951E08D00397A36 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "TDA-Planner/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		17AF7BD01951ED9600397A36 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "TDA-Planner.entitlements"; path = "TDA-Planner/TDA-Planner.entitlements"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AF7BD11951ED9600397A36 /* StoreKit.framework in Frameworks */,
 				175334F8194F6D45007F5A72 /* Social.framework in Frameworks */,
 				175334F6194F6D3F007F5A72 /* Accounts.framework in Frameworks */,
 				175334F2194F6D31007F5A72 /* Security.framework in Frameworks */,
@@ -258,6 +261,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17AF7BD01951ED9600397A36 /* StoreKit.framework */,
 				175334F7194F6D45007F5A72 /* Social.framework */,
 				175334F5194F6D3F007F5A72 /* Accounts.framework */,
 				175334F1194F6D31007F5A72 /* Security.framework */,
