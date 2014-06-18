@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		09607C0167854D03B359D66D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C3E663D10E42C2AA763428 /* iAd.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
