@@ -17,6 +17,7 @@
 	<script src="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.js"></script>
 	<script src="cordova.js"></script>
 	<script src="js/jstorage.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -25,6 +26,9 @@
         document.addEventListener("onFailedToReceiveAd", onFailedToReceiveAd, false);
 
         function onDeviceReady() {
+
+            Parse.initialize("5v5MpGQP2HZ2GuqHYi6gUGGitsw48FJ2NIdWoaZc", "N3v6RkzfQZjpGtqsOoLLzhPOC968eh3E5gAI0yTP");
+
             if ( window.plugins && window.plugins.iAd ) {
                 window.plugins.iAd.createBannerView(
                         { 'bannerAtTop': false },
@@ -33,7 +37,7 @@
             } else { alert('iAd plugin not available/ready.'); }
         }
         function onClickAd() {
-            // TODO: Count click
+            Parse.Analytics.track('iAd');
         }
         function onReceiveAd() {
             // :
