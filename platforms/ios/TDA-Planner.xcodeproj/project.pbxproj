@@ -11,7 +11,6 @@
 		151CD3675EFE4CBCB90F3C92 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 911789424D564B9B8B774877 /* CDVStatusBar.m */; };
 		1739A3ED180C5874004BA0E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */; };
 		1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */; };
-		1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1739A3EC180C5874004BA0E9 /* Default~iPhone.png */; };
 		175334EE194F6CEE007F5A72 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334ED194F6CEE007F5A72 /* Parse.framework */; };
 		175334F0194F6D19007F5A72 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334EF194F6D19007F5A72 /* libz.dylib */; };
 		175334F2194F6D31007F5A72 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F1194F6D31007F5A72 /* Security.framework */; };
@@ -19,6 +18,8 @@
 		175334F8194F6D45007F5A72 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F7194F6D45007F5A72 /* Social.framework */; };
 		175334FA194F6D67007F5A72 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175334F9194F6D67007F5A72 /* FacebookSDK.framework */; };
 		17AF7BCD1951E08D00397A36 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AF7BCC1951E08D00397A36 /* Images.xcassets */; };
+		17AF7BD11951ED9600397A36 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17AF7BD01951ED9600397A36 /* StoreKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		17AF7BD619522B9700397A36 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 17AF7BD519522B9700397A36 /* AppIcon.png */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -68,7 +69,6 @@
 		11C3E663D10E42C2AA763428 /* iAd.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "TDA-Planner/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
 		1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iPhone.png"; path = "TDA-Planner/Resources/splash/Default@2x~iPhone.png"; sourceTree = "<group>"; };
-		1739A3EC180C5874004BA0E9 /* Default~iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iPhone.png"; path = "TDA-Planner/Resources/splash/Default~iPhone.png"; sourceTree = "<group>"; };
 		175334ED194F6CEE007F5A72 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		175334EF194F6D19007F5A72 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		175334F1194F6D31007F5A72 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -76,7 +76,8 @@
 		175334F7194F6D45007F5A72 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		175334F9194F6D67007F5A72 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		17AF7BCC1951E08D00397A36 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "TDA-Planner/Images.xcassets"; sourceTree = SOURCE_ROOT; };
-		17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "TDA-Planner.entitlements"; path = "TDA-Planner/TDA-Planner.entitlements"; sourceTree = "<group>"; };
+		17AF7BD01951ED9600397A36 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		17AF7BD519522B9700397A36 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17AF7BD11951ED9600397A36 /* StoreKit.framework in Frameworks */,
 				175334F8194F6D45007F5A72 /* Social.framework in Frameworks */,
 				175334F6194F6D3F007F5A72 /* Accounts.framework in Frameworks */,
 				175334F2194F6D31007F5A72 /* Security.framework in Frameworks */,
@@ -168,21 +170,6 @@
 			path = "TDA-Planner/Classes";
 			sourceTree = SOURCE_ROOT;
 		};
-		1739A3E8180C5862004BA0E9 /* icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = icons;
-			sourceTree = "<group>";
-		};
-		1739A3E9180C5874004BA0E9 /* splash */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = splash;
-			path = "TDA-Planner/Resources/splash";
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,14 +197,11 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				17AF7BD519522B9700397A36 /* AppIcon.png */,
 				175334F9194F6D67007F5A72 /* FacebookSDK.framework */,
 				175334ED194F6CEE007F5A72 /* Parse.framework */,
-				17EE81E2186CDD92007E52A9 /* TDA-Planner.entitlements */,
 				1739A3EA180C5874004BA0E9 /* Default-568h@2x.png */,
 				1739A3EB180C5874004BA0E9 /* Default@2x~iPhone.png */,
-				1739A3EC180C5874004BA0E9 /* Default~iPhone.png */,
-				1739A3E9180C5874004BA0E9 /* splash */,
-				1739A3E8180C5862004BA0E9 /* icons */,
 				F840E1F0165FE0F500CFE078 /* config.xml */,
 				301BF56E109A69640062928A /* www */,
 				301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */,
@@ -258,6 +242,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17AF7BD01951ED9600397A36 /* StoreKit.framework */,
 				175334F7194F6D45007F5A72 /* Social.framework */,
 				175334F5194F6D3F007F5A72 /* Accounts.framework */,
 				175334F1194F6D31007F5A72 /* Security.framework */,
@@ -350,7 +335,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 500;
+				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 5TFUK958NL;
@@ -359,7 +344,7 @@
 								enabled = 0;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -414,8 +399,8 @@
 				17AF7BCD1951E08D00397A36 /* Images.xcassets in Resources */,
 				1F766FE113BBADB100FB74C0 /* Localizable.strings in Resources */,
 				1739A3EE180C5874004BA0E9 /* Default@2x~iPhone.png in Resources */,
-				1739A3EF180C5874004BA0E9 /* Default~iPhone.png in Resources */,
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				17AF7BD619522B9700397A36 /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,9 +489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "TDA-Planner/TDA-Planner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: George Garside (Z76M42Q35H)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,7 +500,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TDA-Planner/TDA-Planner-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "TDA-Planner/TDA-Planner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
@@ -535,7 +517,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "TDA-Planner";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "D14530F0-8CCB-4630-BE9E-8A9A3AD4DAB8";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -547,9 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_ENTITLEMENTS = "TDA-Planner/TDA-Planner.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: George Garside (5TFUK958NL)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -558,7 +538,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TDA-Planner/TDA-Planner-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "TDA-Planner/TDA-Planner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = (
@@ -576,7 +555,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "TDA-Planner";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "1525B6BD-58CC-4492-97D5-BB5950B7A932";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -584,6 +563,10 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -591,10 +574,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: George Garside (Z76M42Q35H)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -622,6 +605,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -631,6 +615,10 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -638,10 +626,10 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: George Garside (5TFUK958NL)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -654,7 +642,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)\"",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -669,6 +657,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
