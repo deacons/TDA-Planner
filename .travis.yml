@@ -1,3 +1,13 @@
 language: objective-c
 xcode_project: platforms/ios/TDA-Planner.xcodeproj
 xcode_scheme: TDA-Planner
+env:
+  global:
+  - APP_NAME="TDA Planner"
+  - 'DEVELOPER_NAME="iPhone Distribution: George Garside (5TFUK958NL)"'
+  - PROFILE_NAME="TDA_Planner_Distribution"
+  - secure: eUyUXsL5MqKq9Y3GasO0vN0JpE97Q46Mv4JGxGSNN/yGl3FJs2Xk/wOJqXsAWfsMfjNPjPedeDcmbJd5Z3xKqZX17Dt/5LbfNMRl50ms3FqYfuf7l2AB6lqrlKamIs6tvKHGZzmB32+N9XRxTDzvw53OIHI8geTJ4jKcBAAwXc0=
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/profile/TDA_Planner_Distribution.mobileprovision.enc -d -a -out scripts/profile/TDA_Planner_Distribution.mobileprovision
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dist.p12.enc -d -a -out scripts/certs/dist.p12
