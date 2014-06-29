@@ -7,27 +7,13 @@
         "files": {
             "framework": {
                 "parents": {
-                    "AdSupport.framework": [
-                        {
-                            "xml": "false",
-                            "count": 1
-                        }
-                    ],
-                    "iAd.framework": [
-                        {
-                            "xml": "true",
-                            "count": 1
-                        }
-                    ]
+                    "AdSupport.framework": [],
+                    "iAd.framework": []
                 }
             },
             "config.xml": {
                 "parents": {
                     "/*": [
-                        {
-                            "xml": "<feature name=\"iAd\"><param name=\"ios-package\" value=\"CDViAd\" /></feature>",
-                            "count": 1
-                        },
                         {
                             "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" onload=\"true\" value=\"CDVStatusBar\" /></feature>",
                             "count": 1
@@ -50,9 +36,6 @@
         }
     },
     "installed_plugins": {
-        "com.rjfun.cordova.plugin.iad": {
-            "PACKAGE_NAME": "com.georgegarside.tdaplanner"
-        },
         "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         }

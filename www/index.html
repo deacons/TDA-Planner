@@ -21,30 +21,11 @@
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        document.addEventListener("onClickAd", onClickAd, false);
-        document.addEventListener("onReceiveAd", onReceiveAd, false);
-        document.addEventListener("onFailedToReceiveAd", onFailedToReceiveAd, false);
-
         function onDeviceReady() {
 
             Parse.initialize("5v5MpGQP2HZ2GuqHYi6gUGGitsw48FJ2NIdWoaZc", "N3v6RkzfQZjpGtqsOoLLzhPOC968eh3E5gAI0yTP");
 
-            if ( window.plugins && window.plugins.iAd ) {
-                window.plugins.iAd.createBannerView(
-                        { 'bannerAtTop': false },
-                        function() { window.plugins.iAd.showAd( true ); },
-                        function() { alert( "failed to create ad view" ); });
-            } else { alert('iAd plugin not available/ready.'); }
-        }
-        function onClickAd() {
-            Parse.Analytics.track('iAd');
-        }
-        function onReceiveAd() {
-            // :
-        }
-        function onFailedToReceiveAd( ret ) {
-            // alert( ret.error );
-        }
+        };
     </script>
 </head>
 
