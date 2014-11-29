@@ -37,7 +37,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#f1f1f1" />
+    <preference name="StatusBarBackgroundColor" value="#f7f7f8" />
     <preference name="StatusBarStyle" value="default" />
     <content src="index.html" />
 </widget>
