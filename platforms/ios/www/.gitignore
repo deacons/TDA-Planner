@@ -1,0 +1,5 @@
+*
+!*/
+!.gitignore
+!cordova.js
+!cordova_plugins.js
