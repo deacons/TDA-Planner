@@ -21,8 +21,8 @@
 //  AppDelegate.m
 //  TDA-Planner
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
+//  Created by George Garside on 10/05/2013.
+//  Copyright George Garside, 2014. All rights reserved.
 //
 
 #import "AppDelegate.h"
