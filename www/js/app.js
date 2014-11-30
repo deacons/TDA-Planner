@@ -10,7 +10,13 @@ var mainView = appPlanner.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// Callbacks to run specific code for specific pages, for example for About page:
+function store(){
+    var inputUser = document.getElementById("username");
+    localStorage.setItem("username", inputUser.value);
+    var inputPass = document.getElementById("password");
+    localStorage.setItem("password", inputPass.value);
+    return true;
+}
 appPlanner.onPageInit('login', function (page) {
 });
 
