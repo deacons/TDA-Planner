@@ -10,8 +10,22 @@ var mainView = appPlanner.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// Callbacks to run specific code for specific pages, for example for About page:
+function store(){
+    var inputUser = document.getElementById("username");
+    localStorage.setItem("username", inputUser.value);
+    var inputPass = document.getElementById("password");
+    localStorage.setItem("password", inputPass.value);
+    return true;
+}
+
+var inputUser = localStorage.getItem("username");
+var inputPass = localStorage.getItem("password");
+
 appPlanner.onPageInit('login', function (page) {
+    if (inputUser) {
+        document.getElementById('username').value = inputUser;
+        document.getElementById('password').value = inputPass;
+    }
 });
 
 // Generate dynamic page

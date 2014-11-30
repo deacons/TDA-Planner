@@ -1,0 +1,54 @@
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Login</div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="login" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+  		<form action="https://portal.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onsubmit="return store()">
+  		  <input type="hidden" id="curl" name="curl" value="Z2F" />
+  		  <input type="hidden" id="flags" name="flags" value="0" />
+  		  <input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
+  		  <input type="hidden" id="formdir" name="formdir" value="3" />
+			<div class="content-block-title">Login</div>
+				<div class="list-block">
+          <ul>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">Username</div>
+                  <div class="item-input">
+                    <input type="text" id="username" name="username" placeholder="Your username"/>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="item-content">
+                <div class="item-inner">
+                  <div class="item-title label">Password</div>
+                  <div class="item-input">
+                    <input type="password" id="password" name="password" placeholder="Password"/>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="content-block">
+          <div class="row">
+            <div class="col-50"></div>
+            <div class="col-50">
+              <input type="submit" value="Submit" class="button button-fill" />
+            </div>
+          </div>
+        </div>
+    	</form>
+    </div>
+  </div>
+</div>
