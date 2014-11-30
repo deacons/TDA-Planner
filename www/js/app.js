@@ -17,7 +17,15 @@ function store(){
     localStorage.setItem("password", inputPass.value);
     return true;
 }
+
+var inputUser = localStorage.getItem("username");
+var inputPass = localStorage.getItem("password");
+
 appPlanner.onPageInit('login', function (page) {
+    if (inputUser) {
+        document.getElementById('username').value = inputUser;
+        document.getElementById('password').value = inputPass;
+    }
 });
 
 // Generate dynamic page
