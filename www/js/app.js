@@ -27,14 +27,13 @@ appPlanner.onPageInit('login', function (page) {
 		document.getElementById('password').value = inputPass;
 	}
 	networkState = navigator.network.connection.type;
-	if (networkState == Connection.NONE)
-	{
+	if (networkState == Connection.NONE) {
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
 		document.documentElement.appendChild(iframe);
 		window.frames[0].window.alert('No network connection is available. Make sure you are connected to Wi-Fi or a mobile network.');
 		iframe.parentNode.removeChild(iframe);
-	};
+	}
 });
 
 // Generate dynamic page
