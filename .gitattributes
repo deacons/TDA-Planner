@@ -6,3 +6,5 @@ www/css/framework7.themes.min.css linguist-vendored
 www/js/jquery-2.1.3.min.js linguist-vendored
 www/js/framework7.min.js linguist-vendored
 www/js/framework7.min.js.map linguist-vendored
+remote/Forms/* linguist-vendored
+plugins/* linguist-vendored
