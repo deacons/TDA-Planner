@@ -13,6 +13,28 @@
                         {
                             "xml": "true",
                             "count": 1
+                        },
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.0.dylib": [
+                        {
+                            "xml": false,
+                            "count": 1
                         }
                     ]
                 }
@@ -39,6 +61,10 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"UniversalAnalytics\"><param name=\"ios-package\" value=\"UniversalAnalyticsPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -50,6 +76,9 @@
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         },
         "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "com.georgegarside.tdaplanner"
+        },
+        "cordova-plugin-google-analytics": {
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         }
     },

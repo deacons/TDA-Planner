@@ -21,13 +21,21 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-google-analytics/www/analytics.js",
+        "id": "cordova-plugin-google-analytics.UniversalAnalytics",
+        "clobbers": [
+            "analytics"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "org.apache.cordova.statusbar": "0.1.7-dev",
-    "org.apache.cordova.network-information": "0.2.13"
+    "org.apache.cordova.network-information": "0.2.13",
+    "cordova-plugin-google-analytics": "0.7.2"
 }
 // BOTTOM OF METADATA
 });
