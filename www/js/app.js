@@ -1,3 +1,17 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+	console.log('onDeviceReady');
+	// Google Analytics
+	window.analytics.debugMode();
+	window.analytics.startTrackerWithId('UA-44246405-7');
+	if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+		var userid = document.location.pathname.split('/');
+		window.analytics.setUserId(userid[7]);
+	}
+	window.analytics.trackView('index');
+}
+
 // Initialize your app
 var appPlanner = new Framework7();
 
