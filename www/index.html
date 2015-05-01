@@ -30,8 +30,8 @@
 			</div>
 		</div>
 		<!-- Views-->
-		<div class="views tabs toolbar-fixed">
-			<div id="tab-index" class="view view-main tab active">
+		<div class="views tabs toolbar-fixed toolbar-through">
+			<div id="tab-index" data-page="main-index" class="view view-main tab active view-tab-index">
 				<div class="navbar">
 					<div class="navbar-inner">
 						<div class="center sliding">TDA Planner App</div>
@@ -58,19 +58,15 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-tda-info" class="view tab">
+			<div id="tab-tda-info" data-page="main-info" class="view tab view-tab-info">
 				<div class="navbar">
 					<div class="navbar-inner">
-						<div class="center sliding">TDA Planner App</div>
+						<div class="center sliding">TDA Information</div>
 					</div>
 				</div>
 				<div class="pages navbar-through toolbar-through">
 					<div data-page="tda-info" class="page">
 						<div class="page-content">
-							<div class="content-block">
-								<div class="content-block-inner">
-									<p><img src="img/plannertop.png" alt="Planner Top" style="display: block; width: 250px; margin-left: auto; margin-right: auto;"></p>
-								</div>
 							</div>
 							<div class="content-block-title">Launch</div>
 							<div class="list-block">
@@ -90,7 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="tab-tda-login" class="view tab">
+			<div id="tab-tda-login" data-page="main-login" class="view tab view-tab-login">
 				<div class="navbar">
 					<div class="navbar-inner">
 						<div class="center sliding">TDA VLE Login</div>
