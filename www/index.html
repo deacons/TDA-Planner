@@ -8,6 +8,7 @@
 		<title>TDA Planner App</title>
 		<link rel="stylesheet" href="css/framework7.min.css">
 		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/appicons.css">
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.form.min.js"></script>
@@ -29,29 +30,43 @@
 			</div>
 		</div>
 		<!-- Views-->
-		<div class="views">
-			<!-- Your main view, should have "view-main" class-->
-			<div class="view view-main">
-				<!-- Top Navbar-->
+		<div class="views tabs toolbar-fixed toolbar-through">
+			<div id="tab-index" data-page="main-index" class="view view-main tab active view-tab-index">
 				<div class="navbar">
 					<div class="navbar-inner">
-						<!-- We have home navbar without left link-->
 						<div class="center sliding">TDA Planner App</div>
 						<div class="right">
-							<a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+							<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
 						</div>
 					</div>
 				</div>
-				<!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
 				<div class="pages navbar-through toolbar-through">
-					<!-- Page, data-page contains page name-->
 					<div data-page="index" class="page">
-						<!-- Scrollable page content-->
 						<div class="page-content">
 							<div class="content-block">
 								<div class="content-block-inner">
 									<p><img src="img/plannertop.png" alt="Planner Top" style="display: block; width: 250px; margin-left: auto; margin-right: auto;"></p>
 								</div>
+							</div>
+							<div class="content-block-title">News</div>
+							<div class="content-block">
+								<div class="content-block-inner">
+									<p>There's no news at the moment!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tab-tda-info" data-page="main-info" class="view tab view-tab-info">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">TDA Information</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="tda-info" class="page">
+						<div class="page-content">
 							</div>
 							<div class="content-block-title">Launch</div>
 							<div class="list-block">
@@ -60,7 +75,7 @@
 										<a href="login.html" class="item-link">
 											<div class="item-content">
 												<div class="item-inner">
-													<div class="item-title">Login</div>
+													<div class="item-title">Info</div>
 												</div>
 											</div>
 										</a>
@@ -69,6 +84,71 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div id="tab-tda-login" data-page="main-login" class="view tab view-tab-login">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">TDA VLE Login</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="login" class="page">
+						<div class="page-content">
+							<form action="https://portal.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onsubmit="return store()">
+								<input type="hidden" id="curl" name="curl" value="Z2F" />
+								<input type="hidden" id="flags" name="flags" value="0" />
+								<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
+								<input type="hidden" id="formdir" name="formdir" value="3" />
+								<div class="content-block-title">Login</div>
+								<div class="list-block">
+									<ul>
+										<li>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title label">Username</div>
+													<div class="item-input">
+														<input type="text" id="username" name="username" placeholder="Your username"/>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="item-content">
+												<div class="item-inner">
+													<div class="item-title label">Password</div>
+													<div class="item-input">
+														<input type="password" id="password" name="password" placeholder="Password"/>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="content-block">
+									<div class="row">
+										<div class="col-50"></div>
+										<div class="col-50">
+											<input type="submit" value="Submit" class="button button-fill" />
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar tabbar">
+				<div class="toolbar-inner">
+					<a href="#tab-index" class="tab-link active">
+						<i class="icon demo-icon-2"></i>
+					</a>
+					<a href="#tab-tda-info" class="tab-link">
+						<i class="icon demo-icon-1"></i>
+					</a>
+					<a href="#tab-tda-login" class="tab-link">
+						<i class="icon demo-icon-3"></i>
+					</a>
 				</div>
 			</div>
 		</div>
