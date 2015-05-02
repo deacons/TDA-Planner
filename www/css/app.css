@@ -3,3 +3,7 @@
 	background-size: cover;
 	background-position: center;
 }
+
+.card-colleges .card-header {
+	height: 140px;
+}
