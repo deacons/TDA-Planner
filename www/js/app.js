@@ -21,6 +21,8 @@ function store(){
 var inputUser = localStorage.getItem("username");
 var inputPass = localStorage.getItem("password");
 
+var response;
+
 appPlanner.onPageInit('login', function (page) {
 	if (inputUser) {
 		document.getElementById('username').value = inputUser;
@@ -34,6 +36,10 @@ appPlanner.onPageInit('login', function (page) {
 		window.frames[0].window.alert('No network connection is available. Make sure you are connected to Wi-Fi or a mobile network.');
 		iframe.parentNode.removeChild(iframe);
 	}
+	$('form').ajaxForm(function(a) {
+		console.log('Submit');
+		response = a;
+	});
 });
 
 // Generate dynamic page
