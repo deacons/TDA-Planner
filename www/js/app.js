@@ -28,7 +28,7 @@ appPlanner.onPageInit('login', function (page) {
 		document.getElementById('username').value = inputUser;
 		document.getElementById('password').value = inputPass;
 	}
-	networkState = navigator.network.connection.type;
+	var networkState = navigator.network.connection.type;
 	if (networkState == Connection.NONE) {
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
