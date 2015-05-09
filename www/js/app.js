@@ -16,6 +16,7 @@ var tabTDALogin = appPlanner.addView('#tab-tda-login', {
 	dynamicNavbar: true
 });
 
+// Storing username and password in localStorage
 function store(){
 	var inputUser = document.getElementById("username");
 	localStorage.setItem("username", inputUser.value);
@@ -23,12 +24,18 @@ function store(){
 	localStorage.setItem("password", inputPass.value);
 	return true;
 }
-
 var inputUser = localStorage.getItem("username");
 var inputPass = localStorage.getItem("password");
 
 // This is the response HTML from ajax login form submission
 var response;
+
+$(document).ready(function(){
+	// Show loading icon when login button tapped
+	$('button[type="submit"]').click(function(){
+		$('button[type="submit"]').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+	});
+});
 
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
