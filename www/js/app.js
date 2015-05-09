@@ -71,9 +71,16 @@ $$('#tab-tda-login').on('show', function(){
 				closeIcon: false,
 				closeOnClick: true
 			});
+		} else {
+			$('input[id="curl"]').attr('value', arrayPaths[1]);
+			$('form').ajaxSubmit(function(b) {
+				response = $(b);
+				parseResponse();
+			});
 		}
 		// Reset submit button text
 		$('button[type="submit"]').text('Login');
+		$('input[id="curl"]').attr('value', arrayPaths[0]);
 	});
 });
 
