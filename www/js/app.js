@@ -30,6 +30,14 @@ var inputPass = localStorage.getItem("password");
 // This is the response HTML from ajax login form submission
 var response;
 
+// CURL values
+var arrayPaths = [
+	// Disable mobile
+	"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
+	// Student home
+	"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
+];
+
 $(document).ready(function(){
 	// Show loading icon when login button tapped
 	$('button[type="submit"]').click(function(){
