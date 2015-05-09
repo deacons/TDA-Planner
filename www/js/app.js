@@ -94,20 +94,16 @@ function parseResponse() {
 }
 
 // Generate dynamic page
-var dynamicPageIndex = 0;
 function createContentPage() {
-	mainView.router.loadContent(
-		'<!-- Top Navbar-->' +
+	tabTDALogin.router.loadContent(
 		'<div class="navbar">' +
 		'  <div class="navbar-inner">' +
-		'    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>' +
-		'    <div class="center sliding">Dynamic Page ' + (++dynamicPageIndex) + '</div>' +
+		'    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
+		'    <div class="center sliding">' + displayUser + '</div>' +
 		'  </div>' +
 		'</div>' +
 		'<div class="pages">' +
-		'  <!-- Page, data-page contains page name-->' +
 		'  <div data-page="dynamic-pages" class="page">' +
-		'    <!-- Scrollable page content-->' +
 		'    <div class="page-content">' +
 		'      <div class="content-block">' +
 		'        <div class="content-block-inner">' +
@@ -119,5 +115,4 @@ function createContentPage() {
 		'  </div>' +
 		'</div>'
 	);
-	return;
 }
