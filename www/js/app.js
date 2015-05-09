@@ -1,7 +1,5 @@
 // Initialize your app
-var appPlanner = new Framework7({
-	init: false
-});
+var appPlanner = new Framework7();
 
 // Export selectors engine
 var $$ = Dom7;
@@ -49,8 +47,6 @@ appPlanner.onPageInit('login', function (page) {
 		response = a;
 	});
 });
-
-appPlanner.init();
 
 // Generate dynamic page
 var dynamicPageIndex = 0;
