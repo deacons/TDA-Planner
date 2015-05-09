@@ -16,6 +16,7 @@ var tabTDALogin = appPlanner.addView('#tab-tda-login', {
 	dynamicNavbar: true
 });
 
+// Storing username and password in localStorage
 function store(){
 	var inputUser = document.getElementById("username");
 	localStorage.setItem("username", inputUser.value);
@@ -23,16 +24,34 @@ function store(){
 	localStorage.setItem("password", inputPass.value);
 	return true;
 }
-
 var inputUser = localStorage.getItem("username");
 var inputPass = localStorage.getItem("password");
 
-appPlanner.onPageInit('login', function (page) {
+// This is the response HTML from ajax login form submission
+var response;
+
+// CURL values
+var arrayPaths = [
+	// Disable mobile
+	"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
+	// Student home
+	"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
+];
+
+$(document).ready(function(){
+	// Show loading icon when login button tapped
+	$('button[type="submit"]').click(function(){
+		$('button[type="submit"]').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+	});
+});
+
+// Run every time VLE tab is shown
+$$('#tab-tda-login').on('show', function(){
 	if (inputUser) {
 		document.getElementById('username').value = inputUser;
 		document.getElementById('password').value = inputPass;
 	}
-	networkState = navigator.network.connection.type;
+	var networkState = navigator.network.connection.type;
 	if (networkState == Connection.NONE) {
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
@@ -40,23 +59,51 @@ appPlanner.onPageInit('login', function (page) {
 		window.frames[0].window.alert('No network connection is available. Make sure you are connected to Wi-Fi or a mobile network.');
 		iframe.parentNode.removeChild(iframe);
 	}
+	$('form').ajaxForm(function(a) {
+		// jQuery the response once
+		response = $(a);
+		// Notification if credentials are incorrect
+		if (response.find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
+			appPlanner.addNotification({
+				title: 'Login Failed',
+				message: 'Username or password incorrect',
+				hold: 2000,
+				closeIcon: false,
+				closeOnClick: true
+			});
+		} else {
+			$('input[id="curl"]').attr('value', arrayPaths[1]);
+			$('form').ajaxSubmit(function(b) {
+				response = $(b);
+				parseResponse();
+			});
+		}
+		// Reset submit button text
+		$('button[type="submit"]').text('Login');
+		$('input[id="curl"]').attr('value', arrayPaths[0]);
+	});
 });
 
+// Username as shown in top bar
+var displayUser;
+
+// Run once second submission is successful
+function parseResponse() {
+	response.find('.ms-core-menu-root').first().children(':first').remove();
+	var displayUser = response.find('.ms-core-menu-root').first().text();
+}
+
 // Generate dynamic page
-var dynamicPageIndex = 0;
 function createContentPage() {
-	mainView.router.loadContent(
-		'<!-- Top Navbar-->' +
+	tabTDALogin.router.loadContent(
 		'<div class="navbar">' +
 		'  <div class="navbar-inner">' +
-		'    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Back</span></a></div>' +
-		'    <div class="center sliding">Dynamic Page ' + (++dynamicPageIndex) + '</div>' +
+		'    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
+		'    <div class="center sliding">' + displayUser + '</div>' +
 		'  </div>' +
 		'</div>' +
 		'<div class="pages">' +
-		'  <!-- Page, data-page contains page name-->' +
 		'  <div data-page="dynamic-pages" class="page">' +
-		'    <!-- Scrollable page content-->' +
 		'    <div class="page-content">' +
 		'      <div class="content-block">' +
 		'        <div class="content-block-inner">' +
@@ -68,5 +115,4 @@ function createContentPage() {
 		'  </div>' +
 		'</div>'
 	);
-	return;
 }
