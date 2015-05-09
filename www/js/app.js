@@ -27,9 +27,11 @@ function store(){
 var inputUser = localStorage.getItem("username");
 var inputPass = localStorage.getItem("password");
 
+// This is the response HTML from ajax login form submission
 var response;
 
-appPlanner.onPageInit('login', function (page) {
+// Run every time VLE tab is shown
+$$('#tab-tda-login').on('show', function(){
 	if (inputUser) {
 		document.getElementById('username').value = inputUser;
 		document.getElementById('password').value = inputPass;
@@ -43,8 +45,20 @@ appPlanner.onPageInit('login', function (page) {
 		iframe.parentNode.removeChild(iframe);
 	}
 	$('form').ajaxForm(function(a) {
-		console.log('Submit');
-		response = a;
+		// jQuery the response once
+		response = $(a);
+		// Notification if credentials are incorrect
+		if (response.find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
+			appPlanner.addNotification({
+				title: 'Login Failed',
+				message: 'Username or password incorrect',
+				hold: 2000,
+				closeIcon: false,
+				closeOnClick: true
+			});
+		}
+		// Reset submit button text
+		$('button[type="submit"]').text('Login');
 	});
 });
 
