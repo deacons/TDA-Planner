@@ -84,6 +84,15 @@ $$('#tab-tda-login').on('show', function(){
 	});
 });
 
+// Username as shown in top bar
+var displayUser;
+
+// Run once second submission is successful
+function parseResponse() {
+	response.find('.ms-core-menu-root').first().children(':first').remove();
+	var displayUser = response.find('.ms-core-menu-root').first().text();
+}
+
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
