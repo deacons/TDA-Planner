@@ -82,6 +82,7 @@ $$('#tab-tda-login').on('show', function(){
 			$('form').ajaxSubmit(function(b) {
 				response = $(b);
 				loginParseResponse();
+				loginCreateContentPage();
 				loginDone();
 			});
 		}
