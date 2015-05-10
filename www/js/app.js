@@ -75,7 +75,7 @@ $$('#tab-tda-login').on('show', function(){
 			$('input[id="curl"]').attr('value', arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
 				response = $(b);
-				parseResponse();
+				loginParseResponse();
 			});
 		}
 		// Reset submit button text
@@ -88,13 +88,13 @@ $$('#tab-tda-login').on('show', function(){
 var displayUser;
 
 // Run once second submission is successful
-function parseResponse() {
+function loginParseResponse() {
 	response.find('.ms-core-menu-root').first().children(':first').remove();
 	var displayUser = response.find('.ms-core-menu-root').first().text();
 }
 
 // Generate dynamic page
-function createContentPage() {
+function loginCreateContentPage() {
 	tabTDALogin.router.loadContent(
 		'<div class="navbar">' +
 		'  <div class="navbar-inner">' +
