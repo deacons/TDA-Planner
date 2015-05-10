@@ -45,6 +45,12 @@ $(document).ready(function(){
 	});
 });
 
+function loginDone() {
+	// Reset submit button text
+	$('button[type="submit"]').text('Login').removeAttr('disabled');
+	$('input[id="curl"]').attr('value', arrayPaths[0]);
+}
+
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
 	if (inputUser) {
@@ -76,11 +82,9 @@ $$('#tab-tda-login').on('show', function(){
 			$('form').ajaxSubmit(function(b) {
 				response = $(b);
 				loginParseResponse();
+				loginDone();
 			});
 		}
-		// Reset submit button text
-		$('button[type="submit"]').text('Login');
-		$('input[id="curl"]').attr('value', arrayPaths[0]);
 	});
 });
 
