@@ -94,7 +94,7 @@ var displayUser;
 // Run once second submission is successful
 function loginParseResponse() {
 	response.find('.ms-core-menu-root').first().children(':first').remove();
-	var displayUser = response.find('.ms-core-menu-root').first().text();
+	displayUser = response.find('.ms-core-menu-root').first().text();
 }
 
 // Generate dynamic page
