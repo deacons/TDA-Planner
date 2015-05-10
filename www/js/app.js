@@ -39,9 +39,9 @@ var arrayPaths = [
 ];
 
 $(document).ready(function(){
-	// Show loading icon when login button tapped
+	// Show loading icon and disable button when login button tapped
 	$('button[type="submit"]').click(function(){
-		$('button[type="submit"]').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+		$('button[type="submit"]').attr('disabled','').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
 	});
 });
 
