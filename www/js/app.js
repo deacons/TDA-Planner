@@ -92,8 +92,12 @@ $$('#tab-tda-login').on('show', function(){
 	});
 });
 
-// Username as shown in top bar
-var displayUser;
+// For displaying to user, extracted from VLE
+var displayUser; // User's full name per top bar
+var displayToday; // Today's day from timetable (e.g. "Mon A")
+var loginParsedTimetableToday; // Today's periods
+var loginParsedTimetableTodaySubjects = []; // Array of subjects today
+var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimetableTodaySubjects
 
 // Run once second submission is successful
 function loginParseResponse() {
