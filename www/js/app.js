@@ -104,23 +104,14 @@ function loginParseResponse() {
 // Generate dynamic page
 function loginCreateContentPage() {
 	tabTDALogin.router.loadContent(
-		'<div class="navbar">' +
-		'  <div class="navbar-inner">' +
-		'    <div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
-		'    <div class="center sliding">' + displayUser + '</div>' +
-		'  </div>' +
+		'<div class="navbar"><div class="navbar-inner"><div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
+		'<div class="center sliding">' + displayUser + '</div></div></div>' +
+		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' +
+		'<div class="content-block">' +
+		displayToday +
+		'</div><div class="list-block inset">' +
 		'</div>' +
-		'<div class="pages">' +
-		'  <div data-page="dynamic-pages" class="page">' +
-		'    <div class="page-content">' +
-		'      <div class="content-block">' +
-		'        <div class="content-block-inner">' +
-		'          <p>Here is a dynamic page created on ' + new Date() + ' !</p>' +
-		'          <p>Go <a href="#" class="back">back</a> or go to <a href="services.html">Services</a>.</p>' +
-		'        </div>' +
-		'      </div>' +
-		'    </div>' +
-		'  </div>' +
-		'</div>'
+		'<div class="list-block-label"><p>' + new Date() + '</p>' +
+		'</div></div></div></div></div>'
 	);
 }
