@@ -101,7 +101,9 @@ var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimeta
 
 // Run once second submission is successful
 function loginParseResponse() {
+	// Remove extra accessibility element from user's name
 	response.find('.ms-core-menu-root').first().children(':first').remove();
+	// Save user's name
 	displayUser = response.find('.ms-core-menu-root').first().text();
 }
 
