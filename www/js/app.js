@@ -41,7 +41,10 @@ var arrayPaths = [
 $(document).ready(function(){
 	// Show loading icon and disable button when login button tapped
 	$('button[type="submit"]').click(function(){
-		$('button[type="submit"]').attr('disabled','').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+		$('button[type="submit"]').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+		window.setTimeout(function(){
+			$('button[type="submit"]').prop('disabled', true);
+		},100);
 	});
 });
 
