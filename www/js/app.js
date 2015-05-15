@@ -172,7 +172,6 @@ function loginCreateContentPage() {
 		'<div class="list-block inset"><ul>' +
 		displayParsedTimetableTodayListViewRow +
 		'</ul></div>' +
-		'<div class="list-block-label"><p>' + new Date() + '</p>' +
 		'</div></div></div></div></div>'
 	);
 }
