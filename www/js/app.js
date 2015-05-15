@@ -124,6 +124,14 @@ function loginParseResponse() {
 			loginParsedTimetableTodaySubjects.push(undefined);
 		}
 	}
+	// Today's timetable rooms
+	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+		if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().filter('a').length) {
+			loginParsedTimetableTodayRooms.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().attr('href').split('/')[4]);
+		} else {
+			loginParsedTimetableTodayRooms.push(undefined);
+		}
+	}
 }
 
 // Generate dynamic page
