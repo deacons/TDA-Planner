@@ -109,7 +109,7 @@ function loginParseResponse() {
 	// Save user's name
 	displayUser = response.find('.ms-core-menu-root').first().text();
 	// Check if today has a timetable
-	if (response.find('.sor-current:first').children().first()) {
+	if (response.find('.sor-current:first').children().first().text().length != 2) {
 		displayToday = '<div class="content-block-title">' + response.find('.sor-current:first').children().first().text() + '</div>';
 	} else {
 		displayToday = '';
