@@ -143,6 +143,22 @@ function loginParseResponse() {
 	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 
 	}
+	// Rows of timetable to be shown on screen
+	var displayListViewRow = [
+		'<li class="item-content"><div class="item-media">',
+		'</div><div class="item-inner"><div class="item-title">',
+		'</div><div class="item-after">',
+		'</div></div></li>'
+	];
+	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+		var displayListViewRowRight;
+		if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
+			displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+		} else {
+			displayListViewRowRight = loginParsedTimetableTodayRooms[i];
+		}
+		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight);
+	}
 }
 
 // Generate dynamic page
@@ -153,8 +169,9 @@ function loginCreateContentPage() {
 		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' +
 		'<div class="content-block">' +
 		displayToday +
-		'</div><div class="list-block inset">' +
-		'</div>' +
+		'</div><div class="list-block inset"><ul>' +
+		displayParsedTimetableTodayListViewRow +
+		'</ul></div>' +
 		'<div class="list-block-label"><p>' + new Date() + '</p>' +
 		'</div></div></div></div></div>'
 	);
