@@ -132,6 +132,17 @@ function loginParseResponse() {
 			loginParsedTimetableTodayRooms.push(undefined);
 		}
 	}
+	// Today's timetable teachers
+	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+		if ($(loginParsedTimetableToday[i]).children().first().text().length != 1) {
+			loginParsedTimetableTodayTeachers.push($(loginParsedTimetableToday[i]).children().first().text().substring(1));
+		} else {
+			loginParsedTimetableTodayTeachers.push(undefined);
+		}
+	}
+	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+
+	}
 }
 
 // Generate dynamic page
