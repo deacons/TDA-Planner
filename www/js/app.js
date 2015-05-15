@@ -98,6 +98,9 @@ var displayToday; // Today's day from timetable (e.g. "Mon A")
 var loginParsedTimetableToday; // Today's periods
 var loginParsedTimetableTodaySubjects = []; // Array of subjects today
 var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimetableTodaySubjects
+var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsedTimetableTodaySubjects
+var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
+var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
 
 // Run once second submission is successful
 function loginParseResponse() {
