@@ -116,6 +116,14 @@ function loginParseResponse() {
 	}
 	// Today's timetable
 	loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
+	// Today's timetable subjects
+	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+		if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text().length != 1) {
+			loginParsedTimetableTodaySubjects.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text());
+		} else {
+			loginParsedTimetableTodaySubjects.push(undefined);
+		}
+	}
 }
 
 // Generate dynamic page
