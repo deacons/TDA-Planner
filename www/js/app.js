@@ -170,7 +170,7 @@ function loginCreateContentPage() {
 		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' +
 		displayToday +
 		'<div class="list-block inset"><ul>' +
-		displayParsedTimetableTodayListViewRow +
+		displayParsedTimetableTodayListViewRow.join('') +
 		'</ul></div>' +
 		'</div></div></div></div></div>'
 	);
