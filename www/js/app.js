@@ -158,6 +158,7 @@ function loginParseResponse() {
 		}
 	} else {
 		displayToday = '';
+		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + displayListViewRow[1] + 'No timetable' + displayListViewRow[2]);
 	}
 }
 
