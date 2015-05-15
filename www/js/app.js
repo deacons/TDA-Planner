@@ -154,7 +154,7 @@ function loginParseResponse() {
 			} else {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
 			}
-			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight);
+			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight + displayListViewRow[3]);
 		}
 	} else {
 		displayToday = '';
