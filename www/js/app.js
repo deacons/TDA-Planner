@@ -144,6 +144,20 @@ function loginParseResponse() {
 				loginParsedTimetableTodayTeachers.push(undefined);
 			}
 		}
+		// Today's timetable periods
+		for (i = 0; i < loginParsedTimetableToday.length+1; ++i) {
+			switch (true) {
+				case ($(loginParsedTimetableToday[i]).attr('colspan') == '1'):
+					loginParsedTimetableTodayPeriod.push(i+1);
+					break;
+				case ($(loginParsedTimetableToday[i]).attr('colspan') == '2'):
+					loginParsedTimetableTodayPeriod.push((i+1).toString() + '–' + (i+2).toString());
+					i++;
+					break;
+				default:
+					loginParsedTimetableTodayPeriod.push(i+1);
+			}
+		}
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			if (typeof loginParsedTimetableTodaySubjects[i] == 'undefined') {
 				loginParsedTimetableTodaySubjects[i] = '';
