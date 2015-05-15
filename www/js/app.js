@@ -101,6 +101,13 @@ var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimeta
 var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsedTimetableTodaySubjects
 var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
+// Rows of timetable to be shown on screen
+var displayListViewRow = [
+	'<li class="item-content"><div class="item-media">',
+	'</div><div class="item-inner"><div class="item-title">',
+	'</div><div class="item-after">',
+	'</div></div></li>'
+];
 
 // Run once second submission is successful
 function loginParseResponse() {
@@ -140,13 +147,6 @@ function loginParseResponse() {
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 
 		}
-		// Rows of timetable to be shown on screen
-		var displayListViewRow = [
-			'<li class="item-content"><div class="item-media">',
-			'</div><div class="item-inner"><div class="item-title">',
-			'</div><div class="item-after">',
-			'</div></div></li>'
-		];
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			var displayListViewRowRight;
 			if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
