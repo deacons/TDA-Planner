@@ -114,6 +114,8 @@ function loginParseResponse() {
 	} else {
 		displayToday = '';
 	}
+	// Today's timetable
+	loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
 }
 
 // Generate dynamic page
