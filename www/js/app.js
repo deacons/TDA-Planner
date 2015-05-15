@@ -145,7 +145,10 @@ function loginParseResponse() {
 			}
 		}
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-
+			if (typeof loginParsedTimetableTodaySubjects[i] == 'undefined') {
+				loginParsedTimetableTodaySubjects[i] = '';
+				loginParsedTimetableTodayRooms[i] = '';
+			}
 		}
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			var displayListViewRowRight;
