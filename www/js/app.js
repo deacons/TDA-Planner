@@ -111,53 +111,53 @@ function loginParseResponse() {
 	// Check if today has a timetable
 	if (response.find('.sor-current:first').children().first().text().length != 2) {
 		displayToday = '<div class="content-block-title">' + response.find('.sor-current:first').children().first().text() + '</div>';
+		// Today's timetable
+		loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
+		// Today's timetable subjects
+		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text().length != 1) {
+				loginParsedTimetableTodaySubjects.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text());
+			} else {
+				loginParsedTimetableTodaySubjects.push(undefined);
+			}
+		}
+		// Today's timetable rooms
+		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().filter('a').length) {
+				loginParsedTimetableTodayRooms.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().attr('href').split('/')[4]);
+			} else {
+				loginParsedTimetableTodayRooms.push(undefined);
+			}
+		}
+		// Today's timetable teachers
+		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			if ($(loginParsedTimetableToday[i]).children().first().text().length != 1) {
+				loginParsedTimetableTodayTeachers.push($(loginParsedTimetableToday[i]).children().first().text().substring(1));
+			} else {
+				loginParsedTimetableTodayTeachers.push(undefined);
+			}
+		}
+		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+
+		}
+		// Rows of timetable to be shown on screen
+		var displayListViewRow = [
+			'<li class="item-content"><div class="item-media">',
+			'</div><div class="item-inner"><div class="item-title">',
+			'</div><div class="item-after">',
+			'</div></div></li>'
+		];
+		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			var displayListViewRowRight;
+			if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
+				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+			} else {
+				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
+			}
+			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight);
+		}
 	} else {
 		displayToday = '';
-	}
-	// Today's timetable
-	loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
-	// Today's timetable subjects
-	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-		if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text().length != 1) {
-			loginParsedTimetableTodaySubjects.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text());
-		} else {
-			loginParsedTimetableTodaySubjects.push(undefined);
-		}
-	}
-	// Today's timetable rooms
-	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-		if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().filter('a').length) {
-			loginParsedTimetableTodayRooms.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().attr('href').split('/')[4]);
-		} else {
-			loginParsedTimetableTodayRooms.push(undefined);
-		}
-	}
-	// Today's timetable teachers
-	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-		if ($(loginParsedTimetableToday[i]).children().first().text().length != 1) {
-			loginParsedTimetableTodayTeachers.push($(loginParsedTimetableToday[i]).children().first().text().substring(1));
-		} else {
-			loginParsedTimetableTodayTeachers.push(undefined);
-		}
-	}
-	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-
-	}
-	// Rows of timetable to be shown on screen
-	var displayListViewRow = [
-		'<li class="item-content"><div class="item-media">',
-		'</div><div class="item-inner"><div class="item-title">',
-		'</div><div class="item-after">',
-		'</div></div></li>'
-	];
-	for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-		var displayListViewRowRight;
-		if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
-			displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
-		} else {
-			displayListViewRowRight = loginParsedTimetableTodayRooms[i];
-		}
-		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight);
 	}
 }
 
