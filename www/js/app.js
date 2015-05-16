@@ -120,28 +120,29 @@ function loginParseResponse() {
 		displayToday = '<div class="content-block-title">' + response.find('.sor-current:first').children().first().text() + '</div>';
 		// Today's timetable
 		loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
-		// Today's timetable subjects
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			// Today's timetable subjects
 			if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text().length != 1) {
 				loginParsedTimetableTodaySubjects.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text());
 			} else {
 				loginParsedTimetableTodaySubjects.push(undefined);
 			}
-		}
-		// Today's timetable rooms
-		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			// Today's timetable rooms
 			if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().filter('a').length) {
 				loginParsedTimetableTodayRooms.push($(loginParsedTimetableToday[i]).children().filter(':nth-child(3)').contents().attr('href').split('/')[4]);
 			} else {
 				loginParsedTimetableTodayRooms.push(undefined);
 			}
-		}
-		// Today's timetable teachers
-		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			// Today's timetable teachers
 			if ($(loginParsedTimetableToday[i]).children().first().text().length != 1) {
 				loginParsedTimetableTodayTeachers.push($(loginParsedTimetableToday[i]).children().first().text().trim());
 			} else {
 				loginParsedTimetableTodayTeachers.push(undefined);
+			}
+			// Don't show undefined for undefined
+			if (typeof loginParsedTimetableTodaySubjects[i] == 'undefined') {
+				loginParsedTimetableTodaySubjects[i] = '';
+				loginParsedTimetableTodayRooms[i] = '';
 			}
 		}
 		// Today's timetable periods
@@ -158,10 +159,6 @@ function loginParseResponse() {
 					loginParsedTimetableTodayPeriod.push(i+1);
 			}
 		}
-		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-			if (typeof loginParsedTimetableTodaySubjects[i] == 'undefined') {
-				loginParsedTimetableTodaySubjects[i] = '';
-				loginParsedTimetableTodayRooms[i] = '';
 			}
 		}
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
