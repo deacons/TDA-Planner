@@ -190,8 +190,15 @@ function loginParseResponse() {
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			// Right side of list row showing room and teacher
 			var displayListViewRowRight;
-			if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
+			if (typeof loginParsedTimetableTodayRooms[i] != 'undefined' && loginParsedTimetableTodayTeachers[i] != 'undefined') {
+				displayListViewRowRight = '';
+			} else if (typeof loginParsedTimetableTodayRooms[i] != 'undefined') {
+				displayListViewRowRight = loginParsedTimetableTodayTeachers[i];
+			} else if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
+				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
+			} else {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+			}
 			// Double period lesson
 			if (loginParsedTimetableTodayPeriod[i].length == 92) {
 				var displayListViewRowVertical2 = 'height: 70px;';
