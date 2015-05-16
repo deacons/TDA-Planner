@@ -220,13 +220,10 @@ function loginParseResponse() {
 // Generate dynamic page
 function loginCreateContentPage() {
 	tabTDALogin.router.loadContent(
-		'<div class="navbar"><div class="navbar-inner"><div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
-		'<div class="center sliding">' + displayUser + '</div></div></div>' +
-		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' +
-		displayToday +
-		'<div class="list-block inset"><ul>' +
-		displayParsedTimetableTodayListViewRow.join('') +
-		'</ul></div>' +
+		'<div class="navbar"><div class="navbar-inner"><div class="center sliding">' + displayUser + '</div></div></div>' +
+		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' + displayToday +
+		'<div class="list-block inset"><ul>' + displayParsedTimetableTodayListViewRow.join('') + '</ul></div>' +
+		'<div class="content-block"><a href="#" class="back link"><span>Logout</span></a></div></div>' +
 		'</div></div></div></div></div>'
 	);
 }
