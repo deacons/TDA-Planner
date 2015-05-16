@@ -43,16 +43,16 @@ var arrayPaths = [
 $(document).ready(function(){
 	// Show loading icon and disable button when login button tapped
 	$('button[type="submit"]').click(function(){
-		$('button[type="submit"]').html('<sub><span class="preloader preloader-white" style="height: 15px; width: 15px;"></span></sub>');
+		$('button[type="submit"]').html('<sub><span class="preloader"></span></sub>');
 		window.setTimeout(function(){
-			$('button[type="submit"]').prop('disabled', true);
+			$('button[type="submit"]').css('color', 'grey');
 		},100);
 	});
 });
 
 function loginDone() {
 	// Reset submit button text
-	$('button[type="submit"]').text('Login').removeAttr('disabled');
+	$('button[type="submit"]').text('Sign in').removeAttr('style');
 	$('input[id="curl"]').attr('value', arrayPaths[0]);
 }
 
@@ -82,6 +82,7 @@ $$('#tab-tda-login').on('show', function(){
 				closeIcon: false,
 				closeOnClick: true
 			});
+			loginDone();
 		} else {
 			$('input[id="curl"]').attr('value', arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
@@ -90,6 +91,7 @@ $$('#tab-tda-login').on('show', function(){
 				loginParseResponse();
 				loginCreateContentPage();
 				loginDone();
+				appPlanner.closeModal();
 			});
 		}
 	});
@@ -212,20 +214,17 @@ function loginParseResponse() {
 		}
 	} else {
 		displayToday = '';
-		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + displayListViewRow[1] + displayListViewRow[2] + 'No timetable' + displayListViewRow[3]);
+		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'No timetable' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
 	}
 }
 
 // Generate dynamic page
 function loginCreateContentPage() {
 	tabTDALogin.router.loadContent(
-		'<div class="navbar"><div class="navbar-inner"><div class="left"><a href="#" class="back link"><i class="icon icon-back"></i><span>Logout</span></a></div>' +
-		'<div class="center sliding">' + displayUser + '</div></div></div>' +
-		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' +
-		displayToday +
-		'<div class="list-block inset"><ul>' +
-		displayParsedTimetableTodayListViewRow.join('') +
-		'</ul></div>' +
+		'<div class="navbar"><div class="navbar-inner"><div class="center sliding">' + displayUser + '</div></div></div>' +
+		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' + displayToday +
+		'<div class="list-block inset"><ul>' + displayParsedTimetableTodayListViewRow.join('') + '</ul></div>' +
+		'<div class="content-block"><a href="#" class="back link"><span>Logout</span></a></div></div>' +
 		'</div></div></div></div></div>'
 	);
 }
