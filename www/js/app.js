@@ -83,6 +83,7 @@ $$('#tab-tda-login').on('show', function(){
 		} else {
 			$('input[id="curl"]').attr('value', arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
+				loginReset();
 				response = $(b);
 				loginParseResponse();
 				loginCreateContentPage();
@@ -101,6 +102,18 @@ var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimeta
 var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsedTimetableTodaySubjects
 var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
+
+function loginReset() {
+	displayUser = undefined;
+	displayToday = undefined;
+	loginParsedTimetableToday = undefined;
+	loginParsedTimetableTodaySubjects = [];
+	loginParsedTimetableTodayRooms = [];
+	loginParsedTimetableTodayTeachers = [];
+	loginParsedTimetableTodayPeriod = [];
+	displayParsedTimetableTodayListViewRow = [];
+}
+
 // Rows of timetable to be shown on screen
 var displayListViewRow = [
 	'<li class="item-content">',
@@ -110,7 +123,10 @@ var displayListViewRow = [
 ];
 // For replacing shorthand lesson titles
 var dictSubjects = {
-	'FM': 'Further Maths'
+	'FM': 'Further Maths',
+	'MAFM': 'Further Maths',
+	'STY': 'Study',
+	'PDE': 'PD'
 };
 
 // Run once second submission is successful
