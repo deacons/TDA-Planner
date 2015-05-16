@@ -108,6 +108,10 @@ var displayListViewRow = [
 	'</div><div class="item-after">',
 	'</div></div></li>'
 ];
+// For replacing shorthand lesson titles
+var dictSubjects = {
+	'FM': 'Further Maths'
+};
 
 // Run once second submission is successful
 function loginParseResponse() {
@@ -159,6 +163,9 @@ function loginParseResponse() {
 					loginParsedTimetableTodayPeriod.push('<div class="item-media">' + (i+1).toString());
 			}
 		}
+		for (i = 0; i < loginParsedTimetableTodaySubjects.length; ++i) {
+			if (typeof dictSubjects[loginParsedTimetableTodaySubjects[i]] != 'undefined') {
+				loginParsedTimetableTodaySubjects[i] = dictSubjects[loginParsedTimetableTodaySubjects[i]];
 			}
 		}
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
