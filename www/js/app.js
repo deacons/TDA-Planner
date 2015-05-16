@@ -180,12 +180,15 @@ function loginParseResponse() {
 					loginParsedTimetableTodayPeriod.push('<div class="item-media">' + (i+1).toString());
 			}
 		}
+		// Don't show undefined for undefined
 		for (i = 0; i < loginParsedTimetableTodaySubjects.length; ++i) {
 			if (typeof dictSubjects[loginParsedTimetableTodaySubjects[i]] != 'undefined') {
 				loginParsedTimetableTodaySubjects[i] = dictSubjects[loginParsedTimetableTodaySubjects[i]];
 			}
 		}
+		// Construct list view row
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+			// Right side of list row showing room and teacher
 			var displayListViewRowRight;
 			if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
