@@ -1,3 +1,5 @@
+"use strict";
+
 // Initialize your app
 var appPlanner = new Framework7();
 
@@ -141,6 +143,7 @@ function loginParseResponse() {
 		displayToday = '<div class="content-block-title">' + response.find('.sor-current:first').children().first().text() + '</div>';
 		// Today's timetable
 		loginParsedTimetableToday = response.find('.sor-current:first').children().filter(':not(:first)');
+		var i;
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			// Today's timetable subjects
 			if ($(loginParsedTimetableToday[i]).children().filter(':nth-child(2)').contents().text().length != 1) {
