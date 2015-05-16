@@ -117,7 +117,8 @@ function loginReset() {
 // Rows of timetable to be shown on screen
 var displayListViewRow = [
 	'<li class="item-content">',
-	'</div><div class="item-inner"><div class="item-title">',
+	'</div><div class="item-inner" style="',
+	'"><div class="item-title">',
 	'</div><div class="item-after">',
 	'</div></div></li>'
 ];
@@ -188,14 +189,17 @@ function loginParseResponse() {
 			var displayListViewRowRight;
 			if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+			// Double period lesson
+			if (loginParsedTimetableTodayPeriod[i].length == 92) {
+				var displayListViewRowVertical2 = 'height: 70px;';
 			} else {
-				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
+				displayListViewRowVertical2 = '';
 			}
-			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[2] + displayListViewRowRight + displayListViewRow[3]);
+			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + displayListViewRowVertical2 + displayListViewRow[2] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[3] + displayListViewRowRight + displayListViewRow[4]);
 		}
 	} else {
 		displayToday = '';
-		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + displayListViewRow[1] + 'No timetable' + displayListViewRow[2]);
+		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + displayListViewRow[1] + displayListViewRow[2] + 'No timetable' + displayListViewRow[3]);
 	}
 }
 
