@@ -193,11 +193,11 @@ function loginParseResponse() {
 		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
 			// Right side of list row showing room and teacher
 			var displayListViewRowRight;
-			if (typeof loginParsedTimetableTodayRooms[i] != 'undefined' && loginParsedTimetableTodayTeachers[i] != 'undefined') {
+			if (typeof loginParsedTimetableTodayRooms[i] == 'undefined' && typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
 				displayListViewRowRight = '';
-			} else if (typeof loginParsedTimetableTodayRooms[i] != 'undefined') {
+			} else if (typeof loginParsedTimetableTodayRooms[i] == 'undefined') {
 				displayListViewRowRight = loginParsedTimetableTodayTeachers[i];
-			} else if (typeof loginParsedTimetableTodayTeachers[i] != 'undefined') {
+			} else if (typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
 			} else {
 				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
