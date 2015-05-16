@@ -103,7 +103,7 @@ var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTim
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
 // Rows of timetable to be shown on screen
 var displayListViewRow = [
-	'<li class="item-content"><div class="item-media">',
+	'<li class="item-content">',
 	'</div><div class="item-inner"><div class="item-title">',
 	'</div><div class="item-after">',
 	'</div></div></li>'
@@ -149,14 +149,14 @@ function loginParseResponse() {
 		for (i = 0; i < loginParsedTimetableToday.length+1; ++i) {
 			switch (true) {
 				case ($(loginParsedTimetableToday[i]).attr('colspan') == '1'):
-					loginParsedTimetableTodayPeriod.push(i+1);
+					loginParsedTimetableTodayPeriod.push('<div class="item-media">' + (i+1).toString());
 					break;
 				case ($(loginParsedTimetableToday[i]).attr('colspan') == '2'):
-					loginParsedTimetableTodayPeriod.push((i+1).toString() + '–' + (i+2).toString());
+					loginParsedTimetableTodayPeriod.push('<div class="item-media" style="line-height: 35px;	padding-top: 0; padding-bottom: 0;">' + (i+1).toString() + '<br>' + (i+2).toString());
 					i++;
 					break;
 				default:
-					loginParsedTimetableTodayPeriod.push(i+1);
+					loginParsedTimetableTodayPeriod.push('<div class="item-media">' + (i+1).toString());
 			}
 		}
 			}
