@@ -97,6 +97,9 @@ $$('#tab-tda-login').on('show', function(){
 	});
 });
 
+$$('.login-screen').on('open', function(){ StatusBar.hide(); });
+$$('.login-screen').on('close', function(){ StatusBar.show(); });
+
 // For displaying to user, extracted from VLE
 var displayUser; // User's full name per top bar
 var displayToday; // Today's day from timetable (e.g. "Mon A")
