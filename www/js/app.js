@@ -82,6 +82,7 @@ $$('#tab-tda-login').on('show', function(){
 				closeIcon: false,
 				closeOnClick: true
 			});
+			loginDone();
 		} else {
 			$('input[id="curl"]').attr('value', arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
