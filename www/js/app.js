@@ -90,6 +90,7 @@ $$('#tab-tda-login').on('show', function(){
 				loginParseResponse();
 				loginCreateContentPage();
 				loginDone();
+				appPlanner.closeModal();
 			});
 		}
 	});
