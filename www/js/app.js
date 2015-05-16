@@ -217,7 +217,7 @@ function loginParseResponse() {
 		}
 	} else {
 		displayToday = '';
-		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'No timetable' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
+		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'No timetable today' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
 	}
 }
 
