@@ -30,6 +30,8 @@
 
 #import <Cordova/CDVPlugin.h>
 
+#import <Parse/Parse.h>
+
 @implementation AppDelegate
 
 @synthesize window, viewController;
@@ -63,6 +65,17 @@
  */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    [Parse setApplicationId:@"xiO51ucI0Xk3Fq00IeK6x6TEC3yhCPyGdBg1cIEO"
+                  clientKey:@"pCBVecWqIRNP7kn1Sxumb98yWsCSqGOy88Q91gKN"];
+    // Register for Push Notitications
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
 #if __has_feature(objc_arc)
@@ -89,6 +102,17 @@
     [self.window makeKeyAndVisible];
 
     return YES;
+}
+
+// Parse Push Notifications
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 // this happens while we are running ( in the background, or from within our own app )
