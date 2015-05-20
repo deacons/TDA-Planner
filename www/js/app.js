@@ -6,6 +6,9 @@ var appPlanner = new Framework7();
 // Export selectors engine
 var $$ = Dom7;
 
+// Parse init
+Parse.initialize("xiO51ucI0Xk3Fq00IeK6x6TEC3yhCPyGdBg1cIEO", "YAgZScUJmj2k4uakdN2EaAIrj3dkefQfiS2JMfu1");
+
 // Add views
 var mainView = appPlanner.addView('.view-main', {
 	// Because we use fixed-through navbar we can enable dynamic navbar
