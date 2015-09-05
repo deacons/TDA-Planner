@@ -214,45 +214,61 @@
 				<div class="pages navbar-through toolbar-through">
 					<div data-page="login" class="page">
 						<div class="page-content">
-							<form action="https://portal.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onsubmit="return store()">
-								<input type="hidden" id="curl" name="curl" value="Z2F" />
-								<input type="hidden" id="flags" name="flags" value="0" />
-								<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
-								<input type="hidden" id="formdir" name="formdir" value="3" />
-								<div class="content-block-title">Login</div>
-								<div class="list-block">
-									<ul>
-										<li>
-											<div class="item-content">
-												<div class="item-inner">
-													<div class="item-title label">Username</div>
-													<div class="item-input">
-														<input type="text" id="username" name="username" placeholder="Your username"/>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="item-content">
-												<div class="item-inner">
-													<div class="item-title label">Password</div>
-													<div class="item-input">
-														<input type="password" id="password" name="password" placeholder="Password"/>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
+							<div class="content-block">
+								<div class="content-block-inner">
+									<p style="text-align: center;">Access your timetable<br>by signing in to the TDA VLE</p>
+									<p><a href="#" class="open-login-screen button button-big">Login</a></p>
 								</div>
-								<div class="content-block">
-									<div class="row">
-										<div class="col-50"></div>
-										<div class="col-50">
-											<input type="submit" value="Submit" class="button button-fill" />
+							</div>
+						</div>
+					</div>
+					<div class="login-screen">
+						<div class="view">
+							<div class="page">
+								<div class="page-content login-screen-content">
+									<div class="login-screen-title">TDA VLE Login</div>
+									<form action="https://portal.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onsubmit="return store()">
+										<input type="hidden" id="curl" name="curl"
+													 value="Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0" />
+										<input type="hidden" id="flags" name="flags" value="0" />
+										<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
+										<input type="hidden" id="formdir" name="formdir" value="3" />
+										<div class="list-block">
+											<ul>
+												<li>
+													<div class="item-content">
+														<div class="item-inner">
+															<div class="item-title label">Username</div>
+															<div class="item-input">
+																<input type="text" id="username" name="username" placeholder="Your username" autocomplete="off" autocorrect="off" autocapitalize="off"/>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="item-content">
+														<div class="item-inner">
+															<div class="item-title label">Password</div>
+															<div class="item-input">
+																<input type="password" id="password" name="password" placeholder="Password"/>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
 										</div>
-									</div>
+										<div class="list-block">
+											<ul>
+												<li><button type="submit" class="item-link list-button">Sign in</button></li>
+											</ul>
+											<div class="list-block-label">
+												<p>Your username and password<br>will be saved on this device.</p>
+												<p><a href="#" class="close-login-screen">Cancel</a></p>
+											</div>
+										</div>
+									</form>
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>

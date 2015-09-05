@@ -7,3 +7,9 @@
 .card-colleges .card-header {
 	height: 140px;
 }
+
+button[type=submit] {
+	width: 100%;
+	border: 0;
+	font: inherit;
+}
