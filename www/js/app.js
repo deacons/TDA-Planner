@@ -22,7 +22,7 @@ var tabTDALogin = appPlanner.addView('#tab-tda-login', {
 });
 
 // Storing username and password in localStorage
-function store(){
+function store() {
 	var inputUser = document.getElementById("username");
 	localStorage.setItem("username", inputUser.value);
 	var inputPass = document.getElementById("password");
@@ -67,6 +67,7 @@ $$('#tab-tda-login').on('show', function(){
 	}
 	var networkState = navigator.network.connection.type;
 	if (networkState == Connection.NONE) {
+		// All this removes the title from the JS alert
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
 		document.documentElement.appendChild(iframe);
@@ -100,6 +101,7 @@ $$('#tab-tda-login').on('show', function(){
 	});
 });
 
+// Login screen hides status bar
 $$('.login-screen').on('open', function(){ StatusBar.hide(); });
 $$('.login-screen').on('close', function(){ StatusBar.show(); });
 
@@ -113,6 +115,7 @@ var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsed
 var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
 
+// Run on user log out
 function loginReset() {
 	displayUser = undefined;
 	displayToday = undefined;
@@ -198,25 +201,31 @@ function loginParseResponse() {
 			}
 		}
 		// Construct list view row
-		for (i = 0; i < loginParsedTimetableToday.length; ++i) {
-			// Right side of list row showing room and teacher
-			var displayListViewRowRight;
-			if (typeof loginParsedTimetableTodayRooms[i] == 'undefined' && typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
-				displayListViewRowRight = '';
-			} else if (typeof loginParsedTimetableTodayRooms[i] == 'undefined') {
-				displayListViewRowRight = loginParsedTimetableTodayTeachers[i];
-			} else if (typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
-				displayListViewRowRight = loginParsedTimetableTodayRooms[i];
-			} else {
-				displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+		// if check that there are any lessons obtained
+		if (loginParsedTimetableToday.length != 0) {
+			for (i = 0; i < loginParsedTimetableToday.length; ++i) {
+				// Right side of list row showing room and teacher
+				var displayListViewRowRight;
+				if (typeof loginParsedTimetableTodayRooms[i] == 'undefined' && typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
+					displayListViewRowRight = '';
+				} else if (typeof loginParsedTimetableTodayRooms[i] == 'undefined') {
+					displayListViewRowRight = loginParsedTimetableTodayTeachers[i];
+				} else if (typeof loginParsedTimetableTodayTeachers[i] == 'undefined') {
+					displayListViewRowRight = loginParsedTimetableTodayRooms[i];
+				} else {
+					displayListViewRowRight = loginParsedTimetableTodayRooms[i] + ' ' + loginParsedTimetableTodayTeachers[i];
+				}
+				// Double period lesson
+				if (loginParsedTimetableTodayPeriod[i].length == 92) {
+					var displayListViewRowVertical2 = 'height: 70px;';
+				} else {
+					displayListViewRowVertical2 = '';
+				}
+				displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + displayListViewRowVertical2 + displayListViewRow[2] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[3] + displayListViewRowRight + displayListViewRow[4]);
 			}
-			// Double period lesson
-			if (loginParsedTimetableTodayPeriod[i].length == 92) {
-				var displayListViewRowVertical2 = 'height: 70px;';
-			} else {
-				displayListViewRowVertical2 = '';
-			}
-			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + loginParsedTimetableTodayPeriod[i] + displayListViewRow[1] + displayListViewRowVertical2 + displayListViewRow[2] + loginParsedTimetableTodaySubjects[i] + displayListViewRow[3] + displayListViewRowRight + displayListViewRow[4]);
+		} else {
+			displayToday = '';
+			displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'Error obtaining timetable' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
 		}
 	} else {
 		displayToday = '';
