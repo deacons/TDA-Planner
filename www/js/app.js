@@ -19,7 +19,7 @@ var tabTDALogin = appPlanner.addView('#tab-tda-login', {
 });
 
 // Storing username and password in localStorage
-function store(){
+function store() {
 	var inputUser = document.getElementById("username");
 	localStorage.setItem("username", inputUser.value);
 	var inputPass = document.getElementById("password");
@@ -64,6 +64,7 @@ $$('#tab-tda-login').on('show', function(){
 	}
 	var networkState = navigator.network.connection.type;
 	if (networkState == Connection.NONE) {
+		// All this removes the title from the JS alert
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
 		document.documentElement.appendChild(iframe);
@@ -97,6 +98,7 @@ $$('#tab-tda-login').on('show', function(){
 	});
 });
 
+// Login screen hides status bar
 $$('.login-screen').on('open', function(){ StatusBar.hide(); });
 $$('.login-screen').on('close', function(){ StatusBar.show(); });
 
@@ -110,6 +112,7 @@ var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsed
 var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
 
+// Run on user log out
 function loginReset() {
 	displayUser = undefined;
 	displayToday = undefined;
