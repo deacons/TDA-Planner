@@ -7,6 +7,9 @@ var mainView 		= appPlanner.addView(	'.view-main', 		{	dynamicNavbar: true });
 var tabTDAInfo 	= appPlanner.addView(	'#tab-tda-info', 	{ dynamicNavbar: true });
 var tabTDALogin	= appPlanner.addView(	'#tab-tda-login', { dynamicNavbar: true });
 
+// News
+$('#news').load('https://georgegarside.com/apps/tda-planner/remote/news/news.html #load-news');
+
 // Storing username and password in localStorage
 function store() {
 	var inputUser = document.getElementById("username");
