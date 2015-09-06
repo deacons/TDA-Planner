@@ -91,7 +91,7 @@ $$('#tab-tda-login').on('show', function(){
 });
 
 // Login screen hides status bar
-$$('.login-screen').on('open', function(){ StatusBar.hide(); });
+$$('.login-screen').on('open', function(){ setTimeout(function(){ StatusBar.hide(); },200) });
 $$('.login-screen').on('close', function(){ StatusBar.show(); });
 
 // For displaying to user, extracted from VLE
