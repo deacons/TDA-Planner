@@ -18,9 +18,9 @@ VLE.login = {
 		localStorage.setItem("password", document.getElementById("password").value);
 		return true;
 	},
-	retrieve: function() {
-		inputUser = localStorage.getItem("username");
-		inputPass = localStorage.getItem("password");
+	retrieve: function(idUsername, idPassword) {
+		document.getElementById(idUsername).value = localStorage.getItem("username");
+		document.getElementById(idPassword).value = localStorage.getItem("password");
 	},
 	done: function() {
 		// Reset submit button text
@@ -59,10 +59,7 @@ $(document).ready(function(){
 
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
-	if (inputUser) {
-		document.getElementById('username').value = inputUser;
-		document.getElementById('password').value = inputPass;
-	}
+	VLE.login.retrieve('username', 'password');
 	var networkState = navigator.network.connection.type;
 	if (networkState == Connection.NONE) {
 		// All this removes the title from the JS alert
