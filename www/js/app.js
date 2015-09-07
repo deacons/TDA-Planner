@@ -21,6 +21,22 @@ VLE.login = {
 	retrieve: function() {
 		inputUser = localStorage.getItem("username");
 		inputPass = localStorage.getItem("password");
+	},
+	done: function() {
+		// Reset submit button text
+		$('button[type="submit"]').text('Sign in').removeAttr('style');
+		$('input[id="curl"]').attr('value', arrayPaths[0]);
+	},
+	// Run on user log out
+	reset: function() {
+		displayUser = undefined;
+		displayToday = undefined;
+		loginParsedTimetableToday = undefined;
+		loginParsedTimetableTodaySubjects = [];
+		loginParsedTimetableTodayRooms = [];
+		loginParsedTimetableTodayTeachers = [];
+		loginParsedTimetableTodayPeriod = [];
+		displayParsedTimetableTodayListViewRow = [];
 	}
 };
 
@@ -44,12 +60,6 @@ $(document).ready(function(){
 		},100);
 	});
 });
-
-function loginDone() {
-	// Reset submit button text
-	$('button[type="submit"]').text('Sign in').removeAttr('style');
-	$('input[id="curl"]').attr('value', arrayPaths[0]);
-}
 
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
@@ -78,15 +88,15 @@ $$('#tab-tda-login').on('show', function(){
 				closeIcon: false,
 				closeOnClick: true
 			});
-			loginDone();
+			VLE.login.done();
 		} else {
 			$('input[id="curl"]').attr('value', arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
-				loginReset();
+				VLE.login.reset();
 				response = $(b);
 				loginParseResponse();
 				loginCreateContentPage();
-				loginDone();
+				VLE.login.done();
 				appPlanner.closeModal();
 			});
 		}
@@ -112,18 +122,6 @@ var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimeta
 var loginParsedTimetableTodayTeachers = []; // Array of teachers for loginParsedTimetableTodaySubjects
 var loginParsedTimetableTodayPeriod = []; // Array of periods for loginParsedTimetableToday
 var displayParsedTimetableTodayListViewRow = []; // Array of list view rows to be displayed
-
-// Run on user log out
-function loginReset() {
-	displayUser = undefined;
-	displayToday = undefined;
-	loginParsedTimetableToday = undefined;
-	loginParsedTimetableTodaySubjects = [];
-	loginParsedTimetableTodayRooms = [];
-	loginParsedTimetableTodayTeachers = [];
-	loginParsedTimetableTodayPeriod = [];
-	displayParsedTimetableTodayListViewRow = [];
-}
 
 // Rows of timetable to be shown on screen
 var displayListViewRow = [
