@@ -25,7 +25,7 @@ VLE.login = {
 	done: function() {
 		// Reset submit button text
 		$('button[type="submit"]').text('Sign in').removeAttr('style');
-		$('input[id="curl"]').attr('value', arrayPaths[0]);
+		$('input[id="curl"]').attr('value', VLE.login.arrayPaths[0]);
 	},
 	// Run on user log out
 	reset: function() {
@@ -37,19 +37,17 @@ VLE.login = {
 		loginParsedTimetableTodayTeachers = [];
 		loginParsedTimetableTodayPeriod = [];
 		displayParsedTimetableTodayListViewRow = [];
-	}
+	},
+	arrayPaths: [
+		// Disable mobile
+		"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
+		// Student home
+		"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
+	]
 };
 
 // This is the response HTML from ajax login form submission
 var response;
-
-// CURL values
-var arrayPaths = [
-	// Disable mobile
-	"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
-	// Student home
-	"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
-];
 
 $(document).ready(function(){
 	// Show loading icon and disable button when login button tapped
@@ -90,7 +88,7 @@ $$('#tab-tda-login').on('show', function(){
 			});
 			VLE.login.done();
 		} else {
-			$('input[id="curl"]').attr('value', arrayPaths[1]);
+			$('input[id="curl"]').attr('value', VLE.login.arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
 				VLE.login.reset();
 				response = $(b);
