@@ -22,10 +22,21 @@ VLE.login = {
 		document.getElementById(idUsername).value = localStorage.getItem("username");
 		document.getElementById(idPassword).value = localStorage.getItem("password");
 	},
-	done: function() {
+	done: function(status) {
 		// Reset submit button text
 		$('button[type="submit"]').text('Sign in').removeAttr('style');
 		$('input[id="curl"]').attr('value', VLE.login.arrayPaths[0]);
+		if (status == false) {
+			appPlanner.addNotification({
+				title: 'Login Failed',
+				message: 'Username or password incorrect',
+				hold: 2000,
+				closeIcon: false,
+				closeOnClick: true
+			});
+		} else if (status == true) {
+			appPlanner.closeModal();
+		}
 	},
 	// Run on user log out
 	reset: function() {
@@ -73,15 +84,8 @@ $$('#tab-tda-login').on('show', function(){
 		// jQuery the response once
 		response = $(a);
 		// Notification if credentials are incorrect
-		if (response.find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
-			appPlanner.addNotification({
-				title: 'Login Failed',
-				message: 'Username or password incorrect',
-				hold: 2000,
-				closeIcon: false,
-				closeOnClick: true
-			});
-			VLE.login.done();
+		if ($(a).find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
+			VLE.login.done(false);
 		} else {
 			$('input[id="curl"]').attr('value', VLE.login.arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
@@ -89,8 +93,7 @@ $$('#tab-tda-login').on('show', function(){
 				response = $(b);
 				loginParseResponse();
 				loginCreateContentPage();
-				VLE.login.done();
-				appPlanner.closeModal();
+				VLE.login.done(true);
 			});
 		}
 	});
