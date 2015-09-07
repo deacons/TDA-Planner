@@ -10,16 +10,19 @@ var tabTDALogin	= appPlanner.addView(	'#tab-tda-login', { dynamicNavbar: true })
 // News
 $('#news').load('https://georgegarside.com/apps/tda-planner/remote/news/news.html #load-news');
 
-// Storing username and password in localStorage
-function store() {
-	var inputUser = document.getElementById("username");
-	localStorage.setItem("username", inputUser.value);
-	var inputPass = document.getElementById("password");
-	localStorage.setItem("password", inputPass.value);
-	return true;
-}
-var inputUser = localStorage.getItem("username");
-var inputPass = localStorage.getItem("password");
+var VLE = {};
+VLE.login = {
+	// Storing username and password in localStorage
+	store: function() {
+		localStorage.setItem("username", document.getElementById("username").value);
+		localStorage.setItem("password", document.getElementById("password").value);
+		return true;
+	},
+	retrieve: function() {
+		inputUser = localStorage.getItem("username");
+		inputPass = localStorage.getItem("password");
+	}
+};
 
 // This is the response HTML from ajax login form submission
 var response;
@@ -91,7 +94,13 @@ $$('#tab-tda-login').on('show', function(){
 });
 
 // Login screen hides status bar
-$$('.login-screen').on('open', function(){ setTimeout(function(){ StatusBar.hide(); },200) });
+$$('.login-screen').on('open', function(){
+	// Set username/password inputs from localStorage
+	VLE.login.retrieve();
+	setTimeout(function(){
+		StatusBar.hide();
+	},200)
+});
 $$('.login-screen').on('close', function(){ StatusBar.show(); });
 
 // For displaying to user, extracted from VLE
