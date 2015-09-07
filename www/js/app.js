@@ -81,12 +81,13 @@ $$('#tab-tda-login').on('show', function(){
 		if ($(a).find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
 			VLE.login.done(false);
 		} else {
+			// No immediate error, move on. Second path & resubmit.
 			$('input[id="curl"]').attr('value', VLE.login.arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
 				VLE.login.reset();
-				loginParseResponse();
-				loginCreateContentPage();
 				var response = $(b);
+				VLE.parse(response);
+				VLE.createPage();
 				VLE.login.done(true);
 			});
 		}
@@ -130,7 +131,7 @@ var dictSubjects = {
 };
 
 // Run once second submission is successful
-function loginParseResponse() {
+VLE.parse = function loginParseResponse(response) {
 	// Remove extra accessibility element from user's name
 	response.find('.ms-core-menu-root').first().children(':first').remove();
 	// Save user's name
@@ -217,10 +218,10 @@ function loginParseResponse() {
 		displayToday = '';
 		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'No timetable today' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
 	}
-}
+};
 
 // Generate dynamic page
-function loginCreateContentPage() {
+VLE.createPage = function loginCreateContentPage() {
 	tabTDALogin.router.loadContent(
 		'<div class="navbar"><div class="navbar-inner"><div class="center sliding">' + displayUser + '</div></div></div>' +
 		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' + displayToday +
@@ -228,4 +229,4 @@ function loginCreateContentPage() {
 		'<div class="content-block"><a href="#" class="back link"><span>Logout</span></a></div></div>' +
 		'</div></div></div></div></div>'
 	);
-}
+};
