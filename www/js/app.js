@@ -52,10 +52,8 @@ var response;
 $(document).ready(function(){
 	// Show loading icon and disable button when login button tapped
 	$('button[type="submit"]').click(function(){
+		// Insert preloader wheel into log in button
 		$('button[type="submit"]').html('<sub><span class="preloader"></span></sub>');
-		window.setTimeout(function(){
-			$('button[type="submit"]').css('color', 'grey');
-		},100);
 	});
 });
 
