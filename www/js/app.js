@@ -57,9 +57,6 @@ VLE.login = {
 	]
 };
 
-// This is the response HTML from ajax login form submission
-var response;
-
 $(document).ready(function(){
 	// Show loading icon and disable button when login button tapped
 	$('button[type="submit"]').click(function(){
@@ -71,8 +68,7 @@ $(document).ready(function(){
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
 	VLE.login.retrieve('username', 'password');
-	var networkState = navigator.network.connection.type;
-	if (networkState == Connection.NONE) {
+	if (navigator.network.connection.type == Connection.NONE) {
 		// All this removes the title from the JS alert
 		var iframe = document.createElement("IFRAME");
 		iframe.setAttribute("src", 'data:text/plain,');
@@ -81,8 +77,6 @@ $$('#tab-tda-login').on('show', function(){
 		iframe.parentNode.removeChild(iframe);
 	}
 	$('form').ajaxForm(function(a) {
-		// jQuery the response once
-		response = $(a);
 		// Notification if credentials are incorrect
 		if ($(a).find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
 			VLE.login.done(false);
@@ -90,9 +84,9 @@ $$('#tab-tda-login').on('show', function(){
 			$('input[id="curl"]').attr('value', VLE.login.arrayPaths[1]);
 			$('form').ajaxSubmit(function(b) {
 				VLE.login.reset();
-				response = $(b);
 				loginParseResponse();
 				loginCreateContentPage();
+				var response = $(b);
 				VLE.login.done(true);
 			});
 		}
