@@ -3,71 +3,44 @@
 var appPlanner = new Framework7();
 var $$ = Dom7;
 // Tabs
-var mainView 		= appPlanner.addView(	'.view-main', 		{	dynamicNavbar: true });
-var tabTDAInfo 	= appPlanner.addView(	'#tab-tda-info', 	{ dynamicNavbar: true });
-var tabTDALogin	= appPlanner.addView(	'#tab-tda-login', { dynamicNavbar: true });
+var mainView    = appPlanner.addView('.view-main',     { dynamicNavbar: true });
+var tabTDAInfo  = appPlanner.addView('#tab-tda-info',  { dynamicNavbar: true });
+var tabTDALogin	= appPlanner.addView('#tab-tda-login', { dynamicNavbar: true });
 
-// News
-$('#news').load('https://georgegarside.com/apps/tda-planner/remote/news/news.html #load-news');
+function loginStore() {
+	localStorage.setItem("username", document.getElementById("username").value);
+	localStorage.setItem("password", document.getElementById("password").value);
+	return true;
+}
+function loginReset() {
+	displayUser = undefined;
+	displayToday = undefined;
+	loginParsedTimetableToday = undefined;
+	loginParsedTimetableTodaySubjects = [];
+	loginParsedTimetableTodayRooms = [];
+	loginParsedTimetableTodayTeachers = [];
+	loginParsedTimetableTodayPeriod = [];
+	displayParsedTimetableTodayListViewRow = [];
+}
 
-var VLE = {};
-VLE.login = {
-	// Storing username and password in localStorage
-	store: function() {
-		localStorage.setItem("username", document.getElementById("username").value);
-		localStorage.setItem("password", document.getElementById("password").value);
-		return true;
-	},
-	retrieve: function(idUsername, idPassword) {
-		document.getElementById(idUsername).value = localStorage.getItem("username");
-		document.getElementById(idPassword).value = localStorage.getItem("password");
-	},
-	done: function(status) {
-		// Reset submit button text
-		$('button[type="submit"]').text('Sign in').removeAttr('style');
-		$('input[id="curl"]').attr('value', VLE.login.arrayPaths[0]);
-		if (status == false) {
-			appPlanner.addNotification({
-				title: 'Login Failed',
-				message: 'Username or password incorrect',
-				hold: 2000,
-				closeIcon: false,
-				closeOnClick: true
-			});
-		} else if (status == true) {
-			appPlanner.closeModal();
-		}
-	},
-	// Run on user log out
-	reset: function() {
-		displayUser = undefined;
-		displayToday = undefined;
-		loginParsedTimetableToday = undefined;
-		loginParsedTimetableTodaySubjects = [];
-		loginParsedTimetableTodayRooms = [];
-		loginParsedTimetableTodayTeachers = [];
-		loginParsedTimetableTodayPeriod = [];
-		displayParsedTimetableTodayListViewRow = [];
-	},
-	arrayPaths: [
-		// Disable mobile
-		"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
-		// Student home
-		"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
-	]
-};
+var loginPaths = [
+	// Disable mobile
+	"Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0",
+	// Student home
+	"Z2FstudentsZ2FSitePagesZ2FHomeZ252Easpx"
+];
 
 $(document).ready(function(){
-	// Show loading icon and disable button when login button tapped
-	$('button[type="submit"]').click(function(){
-		// Insert preloader wheel into log in button
-		$('button[type="submit"]').html('<sub><span class="preloader"></span></sub>');
-	});
+	// News
+	$('#news').load('https://georgegarside.com/apps/tda-planner/remote/news/news.html #load-news');
 });
 
 // Run every time VLE tab is shown
 $$('#tab-tda-login').on('show', function(){
-	VLE.login.retrieve('username', 'password');
+	// Set username/password fields from local storage
+	document.getElementById('username').value = localStorage.getItem("username");
+	document.getElementById('password').value = localStorage.getItem("password");
+	// Check network
 	if (navigator.network.connection.type == Connection.NONE) {
 		// All this removes the title from the JS alert
 		var iframe = document.createElement("IFRAME");
@@ -76,28 +49,50 @@ $$('#tab-tda-login').on('show', function(){
 		window.frames[0].window.alert('No network connection is available. Make sure you are connected to Wi-Fi or a mobile network.');
 		iframe.parentNode.removeChild(iframe);
 	}
+	// The following is run on form submit
 	$('form').ajaxForm(function(a) {
 		// Notification if credentials are incorrect
 		if ($(a).find('.wrng:first').text() == "You could not be logged on to Forefront TMG. Make sure that your domain name, user name, and password are correct, and then try again.") {
-			VLE.login.done(false);
+			loginDone(false);
 		} else {
 			// No immediate error, move on. Second path & resubmit.
-			$('input[id="curl"]').attr('value', VLE.login.arrayPaths[1]);
+			$('input[id="curl"]').attr('value', loginPaths[1]);
 			$('form').ajaxSubmit(function(b) {
-				VLE.login.reset();
+				loginReset();
 				var response = $(b);
-				VLE.parse(response);
-				VLE.createPage();
-				VLE.login.done(true);
+				loginParseResponse(response);
+				loginPushPage();
+				loginDone(true);
 			});
 		}
 	});
 });
 
+function loginDone(status) {
+	// Reset submit button text
+	$('button[type="submit"]').text('Sign in').removeAttr('style');
+	$('input[id="curl"]').attr('value', loginPaths[0]);
+	if (status == false) {
+		appPlanner.addNotification({
+			title: 'Login Failed',
+			message: 'Username or password incorrect',
+			hold: 2000,
+			closeIcon: false,
+			closeOnClick: true
+		});
+	} else if (status == true) {
+		appPlanner.closeModal();
+	}
+}
+
+
 // Login screen hides status bar
 $$('.login-screen').on('open', function(){
-	// Set username/password inputs from localStorage
-	VLE.login.retrieve();
+	// Show loading icon and disable button when login button tapped
+	$('button[type="submit"]').click(function(){
+		// Insert preloader wheel into log in button
+		$('button[type="submit"]').html('<sub><span class="preloader"></span></sub>');
+	});
 	setTimeout(function(){
 		StatusBar.hide();
 	},200)
@@ -106,7 +101,7 @@ $$('.login-screen').on('close', function(){ StatusBar.show(); });
 
 // For displaying to user, extracted from VLE
 var displayUser; // User's full name per top bar
-var displayToday; // Today's day from timetable (e.g. "Mon A")
+var displayToday; // Today's day from timetable (e.g. "Mon")
 var loginParsedTimetableToday; // Today's periods
 var loginParsedTimetableTodaySubjects = []; // Array of subjects today
 var loginParsedTimetableTodayRooms = []; // Array of rooms for loginParsedTimetableTodaySubjects
@@ -131,7 +126,7 @@ var dictSubjects = {
 };
 
 // Run once second submission is successful
-VLE.parse = function loginParseResponse(response) {
+function loginParseResponse(response) {
 	// Remove extra accessibility element from user's name
 	response.find('.ms-core-menu-root').first().children(':first').remove();
 	// Save user's name
@@ -218,10 +213,10 @@ VLE.parse = function loginParseResponse(response) {
 		displayToday = '';
 		displayParsedTimetableTodayListViewRow.push(displayListViewRow[0] + 'No timetable today' + displayListViewRow[1] + displayListViewRow[2] + displayListViewRow[3]);
 	}
-};
+}
 
 // Generate dynamic page
-VLE.createPage = function loginCreateContentPage() {
+function loginPushPage() {
 	tabTDALogin.router.loadContent(
 		'<div class="navbar"><div class="navbar-inner"><div class="center sliding">' + displayUser + '</div></div></div>' +
 		'<div class="pages"><div data-page="vle-landing" class="page"><div class="page-content">' + displayToday +
@@ -229,4 +224,4 @@ VLE.createPage = function loginCreateContentPage() {
 		'<div class="content-block"><a href="#" class="back link"><span>Logout</span></a></div></div>' +
 		'</div></div></div></div></div>'
 	);
-};
+}
