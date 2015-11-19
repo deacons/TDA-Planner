@@ -142,13 +142,14 @@ function repl(scope,input) {
 	}
 }
 
+function getUser(response) {
+	var responseUser = response.find('.ms-core-menu-root').first();
+	responseUser.children(':first').remove(); // Remove extra accessibility element from user's name
+	return responseUser.text().replace('YEAR ','');
+}
 
-// Run once second submission is successful
 function loginParseResponse(response) {
-	// Remove extra accessibility element from user's name
-	response.find('.ms-core-menu-root').first().children(':first').remove();
-	// Save user's name
-	displayUser = response.find('.ms-core-menu-root').first().text();
+	displayUser = getUser(response);
 	// Check if today has a timetable
 	if (response.find('.sor-current:first').children().first().text().length != 2) {
 		displayToday = '<div class="content-block-title">' + response.find('.sor-current:first').children().first().text() + '</div>';
