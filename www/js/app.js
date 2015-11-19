@@ -119,10 +119,11 @@ var displayListViewRow = [
 ];
 
 var dictSubjects = {
-	'FM': 'Further Maths',
-	'MAFM': 'Further Maths',
-	'STY': 'Study',
-	'PDE': 'PD'
+	'Fm': 'Further Maths',
+	'Mf': 'Further Maths',
+	'Sd': 'Study',
+	'Pz': 'PD',
+	'Ict': 'ICT'
 };
 var dictRooms = {
 	'T13 ICT': 'T13'
