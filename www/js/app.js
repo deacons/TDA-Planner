@@ -117,13 +117,31 @@ var displayListViewRow = [
 	'</div><div class="item-after">',
 	'</div></div></li>'
 ];
-// For replacing shorthand lesson titles
+
 var dictSubjects = {
 	'FM': 'Further Maths',
 	'MAFM': 'Further Maths',
 	'STY': 'Study',
 	'PDE': 'PD'
 };
+var dictRooms = {
+	'T13 ICT': 'T13'
+};
+var dictDays = {
+	'Mon': 'Monday',
+	'Tue': 'Tuesday',
+	'Wed': 'Wednesday',
+	'Thu': 'Thursday',
+	'Fri': 'Friday'
+};
+function repl(scope,input) {
+	if (typeof scope[input] != 'undefined') {
+		return scope[input];
+	} else {
+		return input;
+	}
+}
+
 
 // Run once second submission is successful
 function loginParseResponse(response) {
