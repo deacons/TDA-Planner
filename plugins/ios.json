@@ -46,10 +46,10 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.statusbar": {
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         },
-        "org.apache.cordova.network-information": {
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         }
     },
