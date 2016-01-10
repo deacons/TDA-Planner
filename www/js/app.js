@@ -3,8 +3,8 @@
 var appPlanner = new Framework7();
 var $$ = Dom7;
 // Tabs
-var mainView    = appPlanner.addView('.view-main',     { dynamicNavbar: true });
-var tabTDAInfo  = appPlanner.addView('#tab-tda-info',  { dynamicNavbar: true });
+var mainView = appPlanner.addView('.view-main', { dynamicNavbar: true });
+var tabTDAInfo = appPlanner.addView('#tab-tda-info', { dynamicNavbar: true });
 var tabTDALogin	= appPlanner.addView('#tab-tda-login', { dynamicNavbar: true });
 
 function loginStore() {
