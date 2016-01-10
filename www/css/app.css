@@ -1,0 +1,15 @@
+.card-header-pic .card-header {
+	height: 80px;
+	background-size: cover;
+	background-position: center;
+}
+
+.card-colleges .card-header {
+	height: 140px;
+}
+
+button[type=submit] {
+	width: 100%;
+	border: 0;
+	font: inherit;
+}

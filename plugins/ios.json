@@ -8,7 +8,13 @@
             "framework": {
                 "parents": {
                     "AdSupport.framework": [],
-                    "iAd.framework": []
+                    "iAd.framework": [],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "true",
+                            "count": 1
+                        }
+                    ]
                 }
             },
             "config.xml": {
@@ -29,6 +35,10 @@
                         {
                             "xml": "<preference name=\"StatusBarStyle\" value=\"lightcontent\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"ios-package\" value=\"CDVConnection\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -36,7 +46,10 @@
         }
     },
     "installed_plugins": {
-        "org.apache.cordova.statusbar": {
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.georgegarside.tdaplanner"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.georgegarside.tdaplanner"
         }
     },

@@ -1,62 +1,291 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<title>TDA Planner</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/jquery.tdacolleges.min.css" />
-	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile" charset="utf-8">
-	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile.theme-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile Theme" charset="utf-8">
-	<link rel="stylesheet" href="jquery.mobile-1.4.0-alpha.1/jquery.mobile.structure-1.4.0-alpha.1.min.css" type="text/css" media="screen" title="jQuery Mobile Structure" charset="utf-8">
-	<style>
-		/* Enable multi-line buttons */
-		.ui-btn-inner {white-space: normal !important;}
-	</style>
-	<script src="js/jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="jquery.mobile-1.4.0-alpha.1/jquery.mobile-1.4.0-alpha.1.min.js"></script>
-	<script src="cordova.js"></script>
-	<script src="js/jstorage.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="http://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
-    <script>
-        document.addEventListener("deviceready", onDeviceReady, false);
-        function onDeviceReady() {
-          // JS
-        };
-    </script>
-</head>
-
-<body>
-
-<div data-role="page" id="welcome">
-
-	<div data-role="header" data-position="fixed">
-		<h1>TDA Planner</h1>
-	</div><!-- /header -->
-	
-	<div data-role="content">
-		
-		<br /><br /><br /><br />
-				
-		<img src="img/plannertop.png" alt="Planner Top"  style="width:100%;">
-		
-		<div class="ui-grid-a">
-			<div class="ui-block-a">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>TDA Planner App</title>
+		<link rel="stylesheet" href="css/framework7.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/appicons.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.form.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	</head>
+	<body>
+		<!-- Status bar overlay for fullscreen mode-->
+		<div class="statusbar-overlay"></div>
+		<!-- Panels overlay-->
+		<div class="panel-overlay"></div>
+		<!-- Right panel with reveal effect-->
+		<div class="panel panel-right panel-reveal">
+			<div class="content-block">
+				<p><b>Welcome to the TDA Planner app.</b></p>
+				<p>All content is Copyright George Garside 2016, All Rights Reserved, unless otherwise stated.</p>
+				<p>For more information about this app, see the website: georgegarside.com/apps/tda-planner/</p>
+				<p>If you have any questions, feel free to contact me on my website at georgegarside.com</p>
+				<a href="#" class="close-panel">Close</a>
 			</div>
-			<div class="ui-block-b">
-				<ul data-role="listview" data-inset="true" data-divider-theme="b">
-					<li><a href="vle.html" data-transition="flow" class="timetable" id="vlebutton" data-iconpos="bottom" data-icon="home">VLE</a></li>
-				</ul>
+		</div>
+		<!-- Views-->
+		<div class="views tabs toolbar-fixed toolbar-through">
+			<div id="tab-index" data-page="main-index" class="view view-main tab active view-tab-index">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">TDA Planner App</div>
+						<div class="right">
+							<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="index" class="page">
+						<div class="page-content">
+							<div class="content-block">
+								<div class="content-block-inner">
+									<p><img src="img/plannertop.png" alt="Planner Top" style="display: block; width: 250px; margin-left: auto; margin-right: auto;"></p>
+								</div>
+							</div>
+							<div id="news"></div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div><!-- /grid-a -->
-		
-	</div><!-- /content -->
-
-	<div data-role="footer" data-position="fixed">
-		<h5>&copy; George Garside, 2013</h5>
-	</div><!-- /footer -->
-</div><!-- /page -->
-
-</body>
-
+			<div id="tab-tda-info" data-page="main-info" class="view tab view-tab-info">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">TDA Information</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="tda-info" class="page">
+						<div class="page-content">
+							<div class="list-block accordion-list">
+								<ul>
+									<li class="accordion-item"><a href="#" class="item-content item-link">
+										<div class="item-inner">
+											<div class="item-title">About Thomas Deacon Academy</div>
+										</div></a>
+										<div class="accordion-item-content">
+											<div class="content-block">
+												<p>The Thomas Deacon Academy opened in 2007 and was one of the first Academies to be created. We are the largest, single, sponsored Academy in the country offering a personalised learning environment for students from the ages of 7 to 18 years old.</p>
+											</div>
+											<div class="list-block">
+												<ul><li>
+													<a href="tda/index.html"><div class="item-content"><div class="item-inner">
+														<div class="item-title">more&hellip;</div>
+													</div></div></a>
+												</li></ul>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="content-block-title">Featured</div>
+							<div class="list-block">
+								<ul>
+									<li>
+										<a href="tda/termdates.html" class="item-link">
+											<div class="item-content">
+												<div class="item-media"><i class="fa fa-clock-o"></i></div>
+												<div class="item-inner">
+													<div class="item-title">Term Dates</div>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="content-block-title">Houses</div>
+							<div class="content-block" style="margin-bottom: 0;">
+								<p>Our Academy is divided into six Houses of about 370 students. The House is the focus of the relationship between the Academy and the parents of our students.</p>
+								<p>Each student is assigned to a House but will be taught in, and have access to, the facilities in all Houses as they follow their timetable and participate in enrichment opportunities.</p>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/arts.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(238, 136, 24, 0.9); padding: 1px 5px;">Atherstone</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>Welcome to Atherstone House, the home of Music, Art, Drama and Dance. We are a creative and passionate team that dream ferociously and work hard to make dreams a reality. Our College is a caring community that celebrates its wide diversity and embraces opportunities.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/arts.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/comms.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(138, 191, 45, 0.9); padding: 1px 5px;">Castle</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>Welcome to Castle House. We are home to approximately 360 students and 30 teaching staff. Our aim is to provide exciting and challenging learning experiences that offer both creative and academic challenge and equip our young people to be confident communicators and users of language.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/comms.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/hums.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(255, 218, 0, 0.9); padding: 1px 5px;">Highfield</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>Welcome to Highfield House. The Humanities team is made up of 25 members of teaching staff, 3 teaching assistants and 2 administrators. We offer a wide range of subjects across the year groups consisting of Geography, History, Religious Studies, Business Studies, Economics, Politics, Psychology and Sociology.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/hums.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/maths.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(0, 108, 154, 0.9); padding: 1px 5px;">Milton</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>We aim to present Mathematics in a way that will challenge, engage and enthuse all of our learners so that they achieve their full potential. We are proud of the achievement of our students and celebrate success, be it academic, creative or sporting, enthusiastically.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/maths.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/science.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(112, 39, 121, 0.9); padding: 1px 5px;">Sandown</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>Scientific ideas are essential to understanding the world around us, and science helps people to be successful – science is important to all of us. Science is also exciting! We hope all our students will enjoy their time learning with us.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/science.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+							<div class="card card-header-pic card-colleges">
+								<div style="background-image: url(img/colleges/tech.jpeg);" valign="bottom" class="card-header color-white no-border">
+									<span style="background-color: rgba(229, 58, 31, 0.9); padding: 1px 5px;">Trinity</span>
+								</div>
+								<div class="card-content">
+									<div class="card-content-inner">
+										<p>We promote the strength and identity of a house that is proud of its achievements and its legacy of success and support. All staff are accessible and are mindful of their duties but have an expectation that each student understands their role and responsibility in their education.</p>
+									</div>
+								</div>
+								<div class="card-footer">
+									<a href="#" class="link" style="visibility: hidden"></a>
+									<a href="tda/colleges/tech.html" class="link">more&hellip;</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tab-tda-login" data-page="main-login" class="view tab view-tab-login">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center sliding">TDA VLE Login</div>
+					</div>
+				</div>
+				<div class="pages navbar-through toolbar-through">
+					<div data-page="login" class="page">
+						<div class="page-content">
+							<div class="content-block">
+								<div class="content-block-inner">
+									<p style="text-align: center;">Access your timetable<br>by signing in to the TDA VLE</p>
+									<p><a href="#" class="open-login-screen button button-big">Login</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="login-screen">
+						<div class="view">
+							<div class="page">
+								<div class="page-content login-screen-content">
+									<div class="login-screen-title">TDA VLE Login</div>
+									<form action="https://portal.thomasdeaconacademy.peterborough.sch.uk/CookieAuth.dll?Logon" method="post" id="logonForm" autocomplete="off" onsubmit="return loginStore()">
+										<input type="hidden" id="curl" name="curl"
+													 value="Z2FstudentsZ2F_layoutsZ2F15Z2FmobileZ2Fmblwikia.aspxZ3FUrlZ3DZ252FstudentsZ252FSitePagesZ252FHomeZ252EaspxZ26MobileZ3D0" />
+										<input type="hidden" id="flags" name="flags" value="0" />
+										<input type="hidden" id="forcedownlevel" name="forcedownlevel" value="0" />
+										<input type="hidden" id="formdir" name="formdir" value="3" />
+										<div class="list-block">
+											<ul>
+												<li>
+													<div class="item-content">
+														<div class="item-inner">
+															<div class="item-title label">Username</div>
+															<div class="item-input">
+																<input type="text" id="username" name="username" placeholder="Your username" autocomplete="off" autocorrect="off" autocapitalize="off"/>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="item-content">
+														<div class="item-inner">
+															<div class="item-title label">Password</div>
+															<div class="item-input">
+																<input type="password" id="password" name="password" placeholder="Password"/>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="list-block">
+											<ul>
+												<li><button type="submit" class="item-link list-button">Sign in</button></li>
+											</ul>
+											<div class="list-block-label">
+												<p>Your username and password<br>will be saved on this device.</p>
+												<p><a href="#" class="close-login-screen">Cancel</a></p>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="toolbar tabbar">
+				<div class="toolbar-inner">
+					<a href="#tab-index" class="tab-link active">
+						<i class="icon demo-icon-2"></i>
+					</a>
+					<a href="#tab-tda-info" class="tab-link">
+						<i class="icon demo-icon-1"></i>
+					</a>
+					<a href="#tab-tda-login" class="tab-link">
+						<i class="icon demo-icon-3"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Path to Framework7 Library JS-->
+		<script type="text/javascript" src="js/framework7.min.js"></script>
+		<!-- Path to your app js-->
+		<script type="text/javascript" src="js/app.js"></script>
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NTD989"
+											height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NTD989');</script>
+		<!-- End Google Tag Manager -->
+	</body>
 </html>
